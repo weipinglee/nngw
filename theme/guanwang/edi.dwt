@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>简历管理</title>
+<link href="bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="jianjie.css" rel="stylesheet" type="text/css">
+<link href="memenu.css" rel="stylesheet" type="text/css" media="all" />
+<link href="header.css" rel="stylesheet" type="text/css" media="all" />
+<link href="footer.css" rel="stylesheet" type="text/css" media="all" />
+<script src="images/jquery.min.js"></script>
+<script src="images/footer.js"></script>
+<script type="text/javascript" src="images/slide_show.js"></script>
+</head>
+
+<body>
+   {include file="inc/header.tpl"}
+<div class="jianjie_main" style="padding-top:30px;">
+
+<div class="main_left">
+{include file="inc/page_left.tpl"}
+</div>
+
+	<div class="main_right">
+
+  		<a href="#"><img class="xiasanjiao" src="images/jianjie_3.png" alt="下三角"></a>
+  		<h2>简历管理  <!-- <a class="complete">完成</a> --></h2>
+ 		
+  		<!-- <hr>   -->
+   		<div><!-- <img src="images/none_jl.jpg" style="width:100%;"  alt="还"/> --></div>
+                 <div class="jl_txt">
+                   <!-- <ul class="jl_title">
+                     <li><span>简历名称</span></li>
+                     <li><span>更新时间</span></li>
+                     <li><span>操作</span></li>
+                   </ul> -->
+ 			<!-- 存在简历信息样式 -->
+ 			<!-- <ul class="jl_cont">
+ 				<li><span>xxx</span></li>
+ 				<li><span>2015/12/8</span></li>
+ 				<li><span>操作</span></li>
+ 			</ul> -->
+ 			<!-- 存在简历信息样式结束 -->
+ 			<div class="txt_null">
+              <!-- <p style="text-align: center;line-height: 70px;">empty?</p> -->
+            </div>
+ 		</div> 
+ 		<hr> 
+ 		<div>
+      <!-- 上传简历 -->
+      <form action="{$jianli.url}" method="post" enctype="multipart/form-data">
+        <div class="wj_txt">
+          <span class="wj_name">简历位置:</span>
+          <input name="fil" type="file">
+          <!-- 获取zhaopin 表的 id,job,cat_id -->
+          <input type="hidden" name="zpid" value="{$zpid}">
+          <input type="hidden" name="job" value="{$job}">
+          <input type="hidden" name="cat_name" value="{$cat_name}">
+          <input type="hidden" name="cat_id" value="{$cat_id}">
+        </div>
+         <div class="wj_txt">
+          <span class="wj_name">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <input  type="submit" value="提交" style="width:70px;background:#47bde9">
+        </div>
+      </form>
+ 		</div> 
+ 	</div>
+
+</div>
+{include file="inc/footer.tpl"}
+</body>
+</html>

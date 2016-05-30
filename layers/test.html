@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="Copyright" content="酷站代码 http://www.5icool.org/" />
+<title>可拖拽移动漂亮的zDialog弹出层代码_酷站代码 www.5icool.org</title>
+<style>
+body { background: #ffffff; color: #444;font-size:12px; }
+a { color: #07c; text-decoration: none; border: 0; background-color: transparent; }
+body, div, q, iframe, form, h5 { margin: 0; padding: 0; }
+img, fieldset { border: none 0; }
+body, td, textarea { word-break: break-all; word-wrap: break-word; line-height:1.6; }
+body, input, textarea, select, button { margin: 0; font-size: 12px; font-family: Tahoma, SimSun, sans-serif; }
+div, p, table, th, td { font-size:1em; font-family:inherit; line-height:inherit; }
+h5 { font-size:12px; }
+ol li,ul li{ margin-bottom:0.5em;}
+pre, code { font-family: "Courier New", Courier, monospace; word-wrap:break-word; line-height:1.4; font-size:12px;}
+pre{background:#f6f6f6; border:#eee solid 1px; margin:1em 0.5em; padding:0.5em 1em;}
+#content { padding-left:50px; padding-right:50px; }
+#content h2 { font-size:20px; color:#069; padding-top:8px; margin-bottom:8px; }
+#content h3 { margin:8px 0; font-size:14px; COLOR:#693; }
+#content h4 { margin:8px 0; font-size:16px; COLOR:#690; }
+#content div.item { margin-top:10px; margin-bottom:10px; border:#eee solid 4px; padding:10px; }
+hr { clear:both; margin:7px 0; +margin: 0;
+border:0 none; font-size: 1px; line-height:1px; color: #069; background-color:#069; height: 1px; }
+.infobar { background:#fff9e3; border:1px solid #fadc80; color:#743e04; }
+.buttonStyle{width:64px;height:22px;line-height:22px;color:#369;text-align:center;background:url(images/buticon.gif) no-repeat left top;border:0;font-size:12px;}
+.buttonStyle:hover{background:url(images/buticon.gif) no-repeat left -23px;}
+
+</style>
+<script type="text/javascript" src="zDrag.js"></script>
+<script type="text/javascript" src="zDialog.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript">
+function fun1()
+{
+}
+function fun2()
+{
+	parentDialog.close();
+}
+function fun3()
+{
+	var diag = new Dialog();
+	diag.Width = 900;
+	diag.Height = 400;
+	diag.Title = "内容页为外部连接的窗口";
+	diag.URL = "http://www.5icool.org/";
+	diag.show();
+}
+
+</script>
+</head>
+<body>
+  <div id="dingdanqueren">
+      <table width="100%" border="0" align="center" cellpadding="4" cellspacing="4" bordercolor="#666666">
+        <tr>
+          <td colspan="8" bgcolor="#eeeeee">商品详情</td>
+        </tr>
+        <tr>
+          <td width="150">编号</td>
+          <td width="150">图片</td>
+          <td width="150">名称</td>
+          <td width="150">数量</td>
+          <td width="150">规格</td>
+          <td width="150">价格</td>
+          <td width="150">产地</td>
+          <td width="150">交货地</td>
+        </tr>
+        <tr>
+          <td width="150">001</td>
+          <td width="150">图片</td>
+          <td width="150">高铝砖</td>
+          <td width="150">100</td>
+          <td width="150">80%</td>
+          <td width="150">1980元/吨</td>
+          <td width="150">山西</td>
+          <td width="150">耐耐网一号库</td>
+        </tr>
+        <!-- <tr>
+          <td colspan="8" align="left" style="padding-left:160px;"><input type="button" onClick="fun3()" value="再弹" class="buttonStyle" /> <input onClick="fun2()" class="buttonStyle" type="button" value="关闭" /></td>
+        </tr> -->
+      </table>
+
+      <table width="100%" border="0" align="center" cellpadding="4" cellspacing="4" bordercolor="#666666" class="address">
+        <tr>
+          <td bgcolor="#eeeeee" colspan="2" >填写收货地址</td>
+        </tr>
+        <tr>
+          <td>            
+            <tr>
+              <td align="right">收货人：</td>
+              <td><input type="text" width="1000px"></td>
+            </tr>
+            <tr>
+              <td align="right">收货地址：</td>
+              <td>
+                  <select>
+                    <option>请选择城市</option>
+                  </select>
+                  <select>
+                    <option>请选择市区</option>
+                  </select>
+                  <select>
+                    <option>请选择街道\县</option>
+                  </select>
+              </td>
+            </tr>
+            <tr>
+              <td align="right">详细地址：</td>
+              <td><input type="text" width="1000px"></td>
+            </tr>
+            <tr>
+              <td align="right">手机号码：</td>
+              <td><input type="text" width="1000px"></td>
+            </tr>
+          </td>
+            <tr>
+              <td colspan="2" align="center"><a href="">确定</a><a href="">取消</a></td>
+            </tr>
+          </td>
+        </tr>
+      </table>
+
+
+      <table width="100%" border="0" align="center" cellpadding="4" cellspacing="4" bordercolor="#666666" class="ship">
+        <tr>
+          <td bgcolor="#eeeeee" colspan="4">配送信息</td>
+        </tr>
+        <tr>
+          <td width="150">包裹</td>
+          <td width="150">配送方式</td>
+          <td width="150">运费</td>
+          <td width="150">备注</td>
+        </tr>
+        <tr>
+          <td width="150">包裹1</td>
+          <td width="150">任意日期(普通快递)</td>
+          <td width="150">￥20</td>
+          <td width="150">预计下单后02-18至02-19抵达</td>
+        </tr>
+      </table>
+
+      <table width="100%" border="0" align="center" cellpadding="4" cellspacing="4" bordercolor="#666666">
+        <tr>
+          <td bgcolor="#eeeeee" >发票信息</td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <span>发票类型：</span>
+              <span>普通发票</span>
+            </p>
+            <p>
+              <span>开票方式：</span>
+              <span>电子发票</span>
+            </p> 
+            <p>
+              <span>手机号码：</span>
+              <span>1360****985</span>
+            </p> 
+            <p>
+              <span>发票内容：</span>
+              <span>日用品</span>
+            </p>            
+          </td>
+        </tr>
+      </table>
+     
+      <table width="100%" border="0" align="center" cellpadding="4" cellspacing="4" bordercolor="#666666" class="payment">
+        <tr>
+          <td bgcolor="#eeeeee" >支付信息</td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <input type="radio" checked="checked" name="payment">
+              <label>支付宝支付</label>
+              <span class="gray">(请您下单后24小时内付款。)</span>
+            </div> 
+            <div>
+              <input type="radio" checked="checked" name="payment">
+              <label>货到付款</label>
+            </div>            
+          </td>
+        </tr>
+      </table>
+
+
+          <!-- 信息二 -->
+
+
+      <table width="100%" align="center" cellpadding="4" cellspacing="4" bordercolor="#666666" class="confirm">
+        <tr>
+          <td align="right" width="90%">
+            <p>包裹(个)：1&nbsp;&nbsp;&nbsp;&nbsp;重量(kg)：0.520</p>
+            <p class="fr">商品金额<span class="fz18">18.8</span>元  + 运费<span class="fz18">20</span>元</p>
+            <p><b>总金额<span class="fz18 red">38.8</span>元</b></p>
+          </td> 
+          <td>
+            <a href="">提交订单</a>
+          </td>          
+        </tr>
+      </table>
+  </div>
+</body>
+</html>

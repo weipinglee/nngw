@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{$lang.order_succ}</title>
+
+<link href="layers/css/style.css" rel="stylesheet" type="text/css" >
+
+</head>
+<body>
+
+  <div id="info_return">
+    <div class="content">
+      <p>恭喜您，购买成功！</p>
+      <p class="xinxi">您已经成功购买<a href="">{$order.product_name}</a>&nbsp;&nbsp;&nbsp;{$lang.order_no}：<span class="red">{$order.order_no}</span></p>
+    </div>
+    <div class="detail">
+      <div class="detail_box">
+        <h4>{$lang.order_detail}</h4>
+        <p>
+          <span class="dl">{$lang.order_no}：</span><span class="dr">{$order.order_no}</span>
+        </p>
+        <p>
+          <span class="dl">{$lang.product_name}：</span><span class="dr">{$order.product_name}</span>
+        </p>
+        <p>
+          <span class="dl">{$lang.pay_total}：</span><span class="dr">￥{$order.order_total_fee}</span>
+        </p>
+        {if $order.invo_type==0}
+        <p>
+          <span class="dl">{$lang.invo_detail}：</span><span class="dr">{$lang.invo_title}：{$order.invo_title}&nbsp;&nbsp;&nbsp;&nbsp;{$lang.invo_total}：￥{$order.order_total_fee}</span>
+         </p>
+        {/if}
+      </div>
+      {if $order.invo_type==1}
+            <div class="detail_box">
+              <h4>{$lang.invo_detail}</h4>
+              <p>
+                <span class="dl">{$lang.invo_company}：</span><span class="dr">{$order.invo_company}</span>
+              </p>
+              <p>
+                <span class="dl">{$lang.invo_taxno}：</span><span class="dr">{$order.invo_taxno}</span>
+              </p>
+              <p>
+                <span class="dl">{$lang.invo_address}：</span><span class="dr">{$order.invo_address}</span>
+              </p>
+              <p>
+                  <span class="dl">{$lang.invo_phone}：</span><span class="dr">{$order.invo_phone}</span>
+                </p>
+                <p>
+                  <span class="dl">{$lang.invo_bank}：</span><span class="dr">{$order.invo_bank}</span>
+                </p>
+
+              <p>
+                <span class="dl">{$lang.invo_account}：</span><span class="dr">{$order.invo_account}</span>
+              </p>
+
+            </div>
+        {/if}
+      <p class="warn"><span class="red">温馨提示：</span>您需要的发票会在5天内由快递送达。</p>
+    </div>
+    <div class="info">
+      <p>{$lang.buyer_company}：{$order.buyer_company}</p>
+      <p>{$lang.buyer_phone}：{$order.buyer_phone}</p>
+    </div>
+    <div class="footer">
+      <a href="javascript:void(0)" class="button red" onclick='window.print();'>{$lang.print_page}</a>
+      <a href="javascript:void(0)" class="button" onclick='window.close();'>{$lang.close_page}</a>
+    </div>
+  </div>
+
+
+</body>
+</html>

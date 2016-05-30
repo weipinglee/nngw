@@ -1,0 +1,94 @@
+.header{background: url(./images/header_bg.png) repeat-x;height: 58px;}
+.header .main{max-width:1190px;height:58px;background: url(./images/header_bg.png) repeat-x;padding: 15px 0px;color: #777;margin:0 auto; }
+.header_left{float:left;width: 50%;}.header_right{float:right;width: 50%;text-align: right;}
+
+
+
+#MT_nav div,#MT_nav ul,#MT_nav li,#MT_nav {
+    padding:0;
+    margin:0;
+}
+#MT_nav {
+    line-height:0;
+	width:51%;
+    float: left;
+    font-size:0;
+    position:relative;
+    display: block;
+    z-index:99;
+    font-family:"Microsoft Yahei","Hiragino Sans GB",Arial,Helvetica;
+}
+#MT_nav ul {
+    list-style:none;
+    width:auto;
+    min-width:210px;
+    height:auto;
+    position:absolute;
+    z-index:99;
+}
+#MT_nav ul .MT_item {
+    height:57px;
+    float:left;
+    position:relative;
+    z-index:99;
+    margin-right:5px;
+}
+#MT_nav ul .MT_item:hover div {
+    display:block;
+}
+#MT_nav ul .MT_item a {
+    color:#646464;
+    display:block;
+    font-weight: bold;
+    height:47px;
+    line-height:47px;
+    _line-height:50px;
+    text-align:center;
+    text-decoration:none;
+}
+#MT_nav ul .MT_item a:hover {
+    color:#fff;
+    background: #fd920e;
+}
+#MT_nav ul .MT_item .hover {
+    color:#fff;
+    background: #fd920e;
+}
+#MT_nav ul .MT_item
+#MT_nav ul .MT_current .MT_bg {
+    font-weight:bold;
+    font-size:16px;
+    color:#ff5069;
+}
+#MT_nav ul .MT_item div {
+    display:none;
+    background-color:#000;
+    border:1px solid #ccc;
+    position:absolute;
+    top:42px;
+    left:35%;
+    margin-left:-49%;
+    margin-top: 15px;
+    width:130%;
+    padding:15px 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    filter: alpha(opacity=90);
+    -moz-opacity: 0.9;
+    opacity: 0.9;
+
+}
+#MT_nav ul .MT_list div {
+    display:block;
+}
+#MT_nav ul .MT_item div a {
+    width:100%;
+    margin:0 auto;
+    height:40px;
+    line-height:40px;
+    font-size:14px;
+    font-weight: normal;
+    color: #fff;
+    *zoom:1;
+}

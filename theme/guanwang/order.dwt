@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+
+<script src="images/jquery.min.js"></script>
+<script src="images/artTemplate.js"></script>
+<script src="images/artTemplate-plugin.js"></script>
+<script type='text/javascript' src="images/area_select.js"></script>
+<link href="layers/css/style.css" rel="stylesheet" type="text/css" >
+<link href="order.css" rel="stylesheet" type="text/css" >
+<script src="images/order.js" type='text/javascript' charset="utf-8" ></script>
+
+</head>
+<body>
+  <div id="dingdanqueren">
+      <table width="100%" border="0" align="center" cellpadding="4" cellspacing="4" bordercolor="#666666">
+        <tr>
+          <td colspan="8" bgcolor="#eeeeee">{$lang.product_detail}</td>
+        </tr>
+        <tr>
+          <td width="150">{$lang.image}</td>
+          <td width="150">{$lang.name}</td>
+
+          <td width="150">{$lang.price}</td>
+          <td width="150">{$lang.store}</td>
+          <td width="150">{$lang.nums}</td>
+        </tr>
+        <tr>
+        <input type='hidden' name='product_id' value='{$product.id}'/>
+          <td width="150"><img src='{$product.image1}' width='50' height='50'/></td>
+          <td width="150">{$product.name}</td>
+
+          <td width="150" id='price'>{$product.price}</td>
+          <td width="150">{$product.cangku}</td>
+           <td width="150"><input type='text' name='product_num' value=1 /><span class='red'>*</span></td>
+        </tr>
+
+      </table>
+
+      <table width="100%" border="0" align="center" cellpadding="4" cellspacing="4" bordercolor="#666666" class="address">
+        <tr>
+          <td bgcolor="#eeeeee" colspan="2" >{$lang.user_info}</td>
+        </tr>
+        <tr>
+          <td>            
+
+            <tr>
+              <td align="right">{$lang.buyer_company}：</td>
+              <td><input type="text" width="1000px" name='buyer_company'></td>
+             </tr>
+            <tr>
+             <tr>
+                <td align="right">{$lang.buyer_area}：</td>
+                    <td>
+                        <select name="province" child="city,area" onchange="areaChangeCallback(this,area_url);" style='width:100px;'></select>
+                        <select name="city" child="area" parent="province" onchange="areaChangeCallback(this,area_url);" style='width:100px;'></select>
+                        <select name="area" parent="city" style='width:100px;'></select>
+                        <span class='red'>*</span>
+                    </td>
+
+              </tr>
+
+            <tr>
+              <td align="right">{$lang.buyer_address}：</td>
+              <td><input type="text" width="1000px" name='buyer_address'><span class='red'>*</span></td>
+            </tr>
+             <tr>
+                <td align="right">{$lang.buyer_name}：</td>
+                <td><input type="text" width="1000px" name='buyer_name'><span class='red'>*</span></td>
+              </tr>
+             <tr>
+               <td align="right">{$lang.buyer_phone}：</td>
+               <td><input type="text" width="1000px" name='buyer_phone'><span class='red'>*</span></td>
+              </tr>
+      </table>
+
+
+
+      <table width="100%" border="0" align="center" cellpadding="4" cellspacing="4" bordercolor="#666666">
+        <tr>
+          <td bgcolor="#eeeeee" >{$lang.invo_info}</td>
+        </tr>
+        <tr>
+          <td>
+            <div id="tabbox">
+                           <ul class="tabs" id="tabs">
+                              <li id='common'><a href="#">{$lang.invo_common}</a></li>
+                              <li id='spec'><a href="#">{$lang.invo_spec}</a></li>
+                           </ul>
+                           <input type='hidden' name='invo_type' value=0 />
+                           <ul class="tab_conbox" id="tab_conbox">
+                               <li class="tab_con">
+                                  <p><span class="fr">{$lang.invo_title}：</span><input type="text" name='invo_title' placeholder="请填写个人或单位全称"></p>
+                                  <p><span class="fr">{$lang.invo_content}：</span><input type="text" name='invo_content' placeholder=""></p>
+                                 <!-- <p><a href="" class="button">确认发票信息</a></p>-->
+                               </li>
+
+                               <li class="tab_con">
+                                  <p><span class="fr">{$lang.invo_company}：</span><input type="text" name='invo_company' placeholder="请填写单位全称"></p>
+                                  <p><span class="fr">{$lang.invo_taxno}：</span><input type="text" name='invo_taxno' placeholder=""></p>
+                                  <p><span class="fr">{$lang.invo_address}：</span><input type="text" name='invo_address' placeholder=""></p>
+                                  <p><span class="fr">{$lang.invo_phone}：</span><input type="text" name='invo_phone' placeholder=""></p>
+                                  <p><span class="fr">{$lang.invo_bank}：</span><input type="text" name='invo_bank' placeholder=""></p>
+                                  <p><span class="fr">{$lang.invo_account}：</span><input type="text" name='invo_account' placeholder=""></p>
+                                 <!-- <p><a href="" class="button">确认发票信息</a></p>-->
+                               </li>
+                           </ul>
+                       </div>
+          </td>
+        </tr>
+      </table>
+     
+      <table width="100%" border="0" align="center" cellpadding="4" cellspacing="4" bordercolor="#666666" class="payment">
+        <tr>
+          <td bgcolor="#eeeeee" >支付信息</td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <input type="radio" checked="checked" name="payment">
+              <label>支付宝支付</label>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+
+          <!-- 信息二 -->
+
+
+      <table width="100%" align="center" cellpadding="4" cellspacing="4" bordercolor="#666666" class="confirm">
+        <tr>
+          <td align="right" width="90%">
+            <p><b>总金额<span class="fz18 red" id='total_fee'>{$product.price}</span>元</b></p>
+          </td> 
+          <td>
+            <a href="javascript:void(0)" id='sub'>立即支付</a>
+          </td>          
+        </tr>
+      </table>
+
+  </div>
+
+
+</body>
+</html>

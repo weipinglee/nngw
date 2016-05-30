@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--[if IE 6]>
+{literal}
+<style>
+body {behavior: url("csshover.htc");}
+</style>
+{/literal}
+<![endif]-->
+
+<title>人才招聘</title>
+<link href="bootstrap.css" rel="stylesheet" >
+<link href="style.css" rel="stylesheet">
+<link href="jianjie.css" rel="stylesheet" type="text/css">
+<link href="theme/guanwang/font-awesome.min.css" rel="stylesheet" >
+<link href="memenu.css" rel="stylesheet" type="text/css" media="all" />
+<link href="header.css" rel="stylesheet" type="text/css" media="all" />
+<link href="footer.css" rel="stylesheet" type="text/css" media="all" />
+<!-- <script type="text/javascript" src="images/bootstrap.js"></script> -->
+<script type="text/javascript" src="images/jquery.min.js"></script>
+<script type="text/javascript" src="images/zhaopin.js"></script>
+<script type="text/javascript" src="images/memenu.js"></script>
+<script src="images/footer.js"></script>
+{literal}<script>$(document).ready(function(){$(".memenu").memenu();});</script>{/literal}
+{literal}
+
+<style type="text/css">
+  body {behavior: url("csshover.htc");}
+</style>
+{/literal}
+
+</head>
+
+<body>
+  {include file="inc/header.tpl"}
+  <div class="top_bg">
+    <!-- <div class="main_top">
+      <img src="images/peo_1.png"  alt="">
+    </div> -->
+  </div>
+<div class="jianjie_main" style="min-height:200px;">
+  <ul class="title">
+    <li><span class="zhaopin_hr">招聘职位</span></li>
+    <li class="work_d">  
+      <span>工作地点</span><i class="icon-angle-down icon_size"></i>
+    
+      <ul class="workplace">
+        <!-- {foreach from=$zh name=zh item=zh} -->
+        <li><a href="{$zh.url}"><span class="hover_s">{$zh.cat_name}</span></a></li>
+        <!-- {/foreach} -->
+         <li class="c-tip-arrow"><em></em><ins></ins></li>
+      </ul>
+
+    </li>
+    <li><span>薪资水平</span></li>
+    <li><span>发布时间</span></li>
+    <!--  -->
+  </ul>
+
+  <div class="clear"></div>
+  <div>
+  <!-- {foreach from=$zhaopin name=zhaopin item=zhaopin} -->
+  <div class="toggles" id="toggle">
+    <ul class="pro">
+      <!-- <li style="width:5%;"><i class="icon-angle-down icon_size"></i></li> -->
+      <li><i class="icon-angle-down icon_size an_dj" ></i><span class="arrow" id="arrow">{$zhaopin.job}</span></li>
+      <li>{$zhaopin.cat_name}</li>
+      <li>{$zhaopin.salary}</li>
+      <li>{$zhaopin.add_time}</li>
+      <li class="button"><a class="td_bg" href="{$zhaopin.url}"><img src="images/upload_files.png"></a></li>
+    </ul>
+     <div class="cont_txt" style="display:none">
+    <div class="zhaopin_content">
+      <ul>
+        <li class="c_text">
+           
+            <h4>{$lang.zhaopin_zhize}</h4>
+              <ul> 
+                <li>{$zhaopin.zhize}</li>
+              </ul>
+        </li>
+        <li class="c_text">
+                <h4>{$lang.zhaopin_zige}</h4>
+                <ul> 
+                  {$zhaopin.zige}
+                </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
+<!-- {/foreach} -->
+  
+</div>
+
+
+</div>
+  <div style="    margin: 10px 0;
+    text-align: center;">
+
+{include file="inc/pager.tpl"}
+
+  </div>
+<div style="clear:both;"></div>
+{include file="inc/footer.tpl"}
+
+<script type="text/javascript">       
+</script>
+
+</body>
+</html>

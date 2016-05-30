@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--[if IE 6]>
+{literal}
+<style>
+body {behavior: url("csshover.htc");}
+</style>
+{/literal}
+<![endif]-->
+
+<title>新闻列表</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<link href="bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="jianjie.css" rel="stylesheet" type="text/css" />
+
+<link href="footer.css" rel="stylesheet" type="text/css" media="all" />
+<script src="images/jquery.min.js" type="text/javascript" ></script>
+
+
+{literal} 
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>{/literal} 
+<!-- start menu -->
+{literal} 
+<script src="images/simpleCart.min.js"> </script>
+{/literal} 
+<!-- start menu -->
+<link href="memenu.css" rel="stylesheet" type="text/css" media="all" />
+<link href="header.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="images/memenu.js"></script>
+{literal} 
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>
+{/literal} 	
+<!-- /start menu -->
+<script src="images/footer.js"></script>
+</head>
+
+<body>
+{include file="inc/header.tpl"}
+<div class="jianjie_main" style="padding-top:30px;">
+
+<div class="main_left">
+{include file="inc/page_left.tpl"}
+
+</div>
+
+<div class="main_right">
+
+  <img class="xiasanjiao" src="images/jianjie_3.png"  alt="下三角">
+  <h2>{include file="inc/ur_here.tpl"}<!-- <a href="index.html"><span>  网站首页</span></a>&nbsp;>&nbsp;<span>新闻列表</span> --></h2>
+  <hr>
+  
+ <div class="news_list"> 
+ 	<!-- {foreach from=$article_list name=article_list item=article} --> 
+  <ul class="new_list">
+ 
+ <li><p><img class="biao" src="images/listpo.jpg" width="4" height="4" alt="小标"><a href="{$article.url}">{$article.title}</a></p><span>[{$lang.add_time}：{$article.add_time}]</span>
+ </li>
+ 
+  </ul>
+ <!-- {/foreach} --> 
+  <div class="header-top">
+  	{include file="inc/pager.tpl"}
+</div>
+ 
+ 
+  
+ </div> 
+  
+  </div>
+
+</div>
+{include file="inc/footer.tpl"}
+</body>
+</html>

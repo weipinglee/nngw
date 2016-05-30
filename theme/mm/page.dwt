@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>耐耐官网</title>
+<link rel="stylesheet" type="text/css" href="jianjie.css">	
+<link href="bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="docs.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet" type="text/css" media="all" />	
+<link rel="stylesheet" type="text/css" href="footer.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/footer.js"></script>
+<link href="memenu.css" rel="stylesheet" type="text/css" media="all" />
+<link href="header.css" rel="stylesheet" type="text/css" media="all" />
+<link href="footer.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/memenu.js"></script>
+{literal}<script>$(document).ready(function(){$(".memenu").memenu();});</script>	{/literal}
+
+</head>
+
+<body>
+<!--头部开始-->
+       <div class="header-top">
+	 <div class="header-bottom">			
+				<div class="logo">
+					<img src="images/logo.png">					
+				</div>
+			 <!---->	
+			
+			 <div class="top-nav">
+				<ul class="memenu skyblue">
+					<li {if $index.cur} class="active" {/if}><a href="{$site.root_url}" target="_parent" class="menu_li">{$lang.home}</a></li>
+					<!-- {foreach from=$nav_middle_list name=nav_middle_list item=nav} --> 
+					<li {if $nav.cur} class="active hover" {/if}>
+						<a href="{$nav.url}" {if $smarty.foreach.nav_middle_list.iteration eq 5}{/if}{if $nav.target} target="_blank"{/if}>{$nav.nav_name}
+						</a>
+						<!-- {if $nav.child} -->
+						<div class="mepanel">
+							<div class="row">
+							<!-- {foreach from=$nav.child item=child} -->
+								<div class="col1 me-one">
+									<h4 style="border:0;"><a href="{$child.url}" {if $child.child}{/if} target="_parent">{$child.nav_name}</a></h4>
+								</div>
+							<!-- {/foreach} -->
+							</div>
+						</div>
+						<!-- {/if} --> 
+						
+					</li>	
+				<!-- {/foreach} -->					
+				</ul>				
+			 </div>
+			 <!---->
+			 <div class="cart box_1">
+				<form action="" method="get" class="search">
+					<div class="kuan"><input name="" type="text" value="搜索更多信息"/></div><!--搜索框-->
+					<div class="an"><input name="" type="button" value=""/></div><!--搜索按钮-->
+				</form>
+				
+			 	<div class="clearfix"> </div>
+			 </div>
+			 <div class="clearfix"> </div>
+			 <!---->			 
+			 </div>
+			<div class="clearfix"> </div>
+</div>
+<!--头部结束-->	
+<div class="jianjie_main">
+
+<div class="main_left">
+<a href="#"><img class="shizhong" src="images/jianjie_1.png" width="35" height="35" alt="时钟"></a>
+<h2>工作时间</h2>
+<hr>
+<p>周一至周五：9:00-18:00</p>
+<p>周六至周日：休息</p>
+<hr style="border: 1px dashed #ccc; width: 100%; size: 1px;" />  
+<a href="#"><img class="qqkf" src="images/jianjie_2.png" width="155" height="35" alt="QQ客服"></a> 
+
+</div>
+
+<div class="main_right">
+
+  <a href="#"><img class="xiasanjiao" src="images/jianjie_3.png" alt="下三角">{$page.page_name}</a>
+  <h2>{$page.page_name}</h2>
+  <hr>
+  {$page.content}
+  
+   </div>
+
+</div>
+
+
+<!--底部开始-->
+<div class="footer">
+ <hr>
+ <div class="line">
+ <img class="hezuo_img" src="images/hezuo.jpg" width="97" height="22" alt="合作企业">
+ 
+ <div class="img_box">
+   <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image2','','images/hezuo_1.png',1)"><img src="images/hezuo_1.jpg" width="44" height="44" id="Image2">
+   </a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image3','','images/hezuo_2.png',1)"><img src="images/hezuo_2.jpg" width="44" height="44" id="Image3"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image2','','images/hezuo_1.png',1)"> </a>
+   <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','images/hezuo_3.png',1)"><img src="images/hezuo_3.jpg" width="44" height="44" id="Image4"></a>
+   <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','images/hezuo_4.png',1)"><img src="images/hezuo_4.jpg" width="44" height="44" id="Image5"></a>
+   <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','images/hezuo_5.png',1)"><img src="images/hezuo_5.jpg" width="44" height="44" id="Image6"></a>
+   <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','images/hezuo_6.png',1)"><img src="images/hezuo_6.jpg" width="44" height="44" id="Image7"></a>
+   <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image8','','images/hezuo_7.png',1)"><img src="images/hezuo_7.jpg" width="44" height="44" id="Image8"></a>
+   
+   </div>
+ 
+  </div>
+<div class="bottom">
+
+<hr>
+<p>Copyright&copy;2000-2015&nbsp;耐耐云商科技有限公司 版权所有&nbsp;&nbsp;&nbsp;沪IPC备15028925号</p>
+<p>服务电话：4006738086&nbsp;地址：上海浦东新区唐镇上丰路977号b座</p> 
+
+
+
+</p>
+ 
+ 
+ 
+ </div>  
+  
+  
+  
+  
+</div>
+
+<!--底部结束-->
+</body>
+</html>

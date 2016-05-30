@@ -1,0 +1,113 @@
+/* 主体框架
+----------------------------------------------- */
+#wrapper {
+}
+#wrapper .wrap {
+ width: 1190px;
+ margin: 0px auto;
+ border:1px solid red;
+}
+#wrapper .mb {
+ margin-bottom: 50px;
+ margin:0 auto;
+ padding:0 10%;
+ height:auto;
+ overflow: hidden;
+ padding-top:30px;
+
+}
+
+/* -- page -- */
+#pageLeft {
+ float: left;
+ width: 180px;
+ margin-right: 20px;
+}
+#pageIn {
+ float: left;
+ width: 780px;
+ overflow: hidden;
+}
+.clear {
+ clear: both;
+ height: 0;
+ line-height: 0;
+ font-size: 0;
+}
+/* -- tree -- */
+.treeBox {
+ margin-bottom: 15px;
+ margin-left:-100px;
+ border:1px solid blue;
+}
+.treeBox h3 {
+ height: 35px;
+ line-height: 35px;
+ color: #7A7F81;
+ font-weight: bold;
+ font-size: 14px;
+ border-bottom: 1px solid #CBD1D3;
+}
+.treeBox li {
+ border-left: 4px solid #F4F4F4;
+ line-height: 15px;
+ margin-top: 15px;
+ padding-left: 10px;
+}
+.treeBox li.cur {
+ border-left: 4px solid #19B4EA;
+}
+.treeBox li a {
+ color: #7A7F81;
+}
+.treeBox .searchBox {
+ margin:20px 0;
+}
+.treeBox .searchBox .keyword {
+ width: 136px;
+}
+
+/* product_category
+----------------------------------------------- */
+.productList {
+ padding-top: 20px;
+ color: #999999;
+ float: right;
+}
+.productList dl {
+ float: left;
+ width: 370px;
+ height: 160px;
+ margin: 0 20px 30px 0;
+}
+.productList dl.last {
+ margin-right: 0;
+}
+.productList dt {
+ float: left;
+ width: 160px;
+}
+.productList dd {
+ float: left;
+ width: 195px;
+ padding: 15px 0 0 15px;
+}
+.productList dt img {
+ border: 1px solid #EEEEEE;
+}
+.productList .name {
+ height: 18px;
+ overflow: hidden;
+}
+.productList .name a {
+ color: #333333;
+ font-weight: bold;
+}
+.productList .brief {
+ color: #999999;
+ padding-top: 8px;
+ height: 60px;
+}
+.productList .price {
+ padding-bottom: 10px;
+}

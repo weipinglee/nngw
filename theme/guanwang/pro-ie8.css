@@ -1,0 +1,10 @@
+.col-md-7 {
+        width: 32% !important;
+    }
+	.col-md-5 {
+        width: 60% !important;
+    }
+	.product-model-sec{float:right !important;}
+.flex-control-thumbs LI{
+	width:31% !important;
+}

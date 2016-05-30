@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{$lang.home}{if $ur_here} - {$ur_here} {/if}</title>
+<meta name="Copyright" content="Douco Design." />
+<link href="templates/public.css" rel="stylesheet" type="text/css">
+{include file="javascript.htm"}
+</head>
+<body>
+<div id="dcWrap">
+ {include file="header.htm"}
+ <div id="dcLeft">{include file="menu.htm"}</div>
+ <div id="dcMain">
+   {include file="ur_here.htm"}
+   <div class="mainBox" style="{$workspace.height}">
+    <!-- {if $rec eq 'default'} 订单列表 -->
+    <h3>{$ur_here}</h3>
+    <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+      <tr>
+        <th width="100" align="left">{$lang.order_no}</th>
+        <th align="center">{$lang.product_name}</th>
+        <th align="center">{$lang.product_nums}</th>
+       <th width="" align="center">{$lang.order_total_fee}</th>
+        <th width="" align="center">{$lang.buyer_name}</th>
+       <th width="" align="center">{$lang.buyer_phone}</th>
+       <th width="" align="center">{$lang.buyer_address}</th>
+       <th width="" align="center">{$lang.order_trade_status}</th>
+       <th width="" align="center">{$lang.order_create_time}</th>
+       <th width="" align="center">{$lang.handler}</th>
+     </tr>
+      <!-- {foreach from=$order_list item=order} -->
+      <tr>
+        <td>{$order.order_no}</td>
+        <td align="center">{$order.product_name}</td>
+        <td align="center">{$order.product_num}</td>
+       <td align="center">{$order.order_total_fee}</td>
+       <td align="center">{$order.buyer_name}</td>
+       <td align="center">{$order.buyer_phone}</td>
+       <td align="center">{$order.buyer_address}</td>
+       <td align="center">{if $order.order_trade_status == 1}已支付{else }未支付{/if}</td>
+       <td align="center">{$order.order_create_time}</td>
+       <td align="center">
+        <a href="order.php?rec=edit&id={$order.id}">{$lang.edit}</a> | <a href="order.php?rec=del&id={$order.id}">{$lang.del}</a>
+
+       </td>
+    </tr>
+      <!-- {/foreach} -->
+    </table>
+    <div class="clear"></div>
+    {include file="pager.htm"}
+    <!-- {/if} -->
+
+    <!-- {if $rec eq 'edit'} 商品添加或编辑 -->
+    <h3>{$ur_here}</h3>
+    <form action="" >
+     <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+      <tr>
+       <td width="90" align="right">{$lang.order_no}</td>
+       <td>
+        {$order.order_no}
+       </td>
+      </tr>
+      <tr>
+       <td width="90" align="right">{$lang.product_name}</td>
+       <td>
+        {$order.product_name}
+       </td>
+      </tr>
+      <tr>
+       <td width="90" align="right">{$lang.product_nums}</td>
+       <td>
+        {$order.product_num}
+       </td>
+      </tr>
+      <tr>
+       <td width="90" align="right">{$lang.buyer_name}</td>
+       <td>
+        {$order.buyer_name}
+       </td>
+      </tr>
+      <tr>
+       <td width="90" align="right">{$lang.buyer_phone}</td>
+       <td>
+        {$order.buyer_phone}
+       </td>
+      </tr>
+      <tr>
+       <td width="90" align="right">{$lang.area}</td>
+       <td>
+        {$order.area}
+       </td>
+      </tr>
+      <tr>
+      <td width="90" align="right">{$lang.buyer_address}</td>
+      <td>
+       {$order.buyer_address}
+      </td>
+     </tr>
+      <tr>
+       <td width="90" align="right">{$lang.order_total_fee}</td>
+       <td>
+        {$order.order_total_fee}
+       </td>
+      </tr>
+      <tr>
+       <td width="90" align="right">{$lang.order_trade_no}</td>
+       <td>
+        {$order.order_trade_no}
+       </td>
+      </tr>
+      <tr>
+       <td width="90" align="right">{$lang.order_trade_status}</td>
+       <td>
+        {$order.order_trade_status_text}
+       </td>
+      </tr>
+      {if $order.invo_type==0}
+      <tr>
+       <td width="90" align="right">{$lang.invo_type}</td>
+       <td>
+        {$lang.invo_common}
+       </td>
+      </tr>
+       <tr>
+      <td width="90" align="right">{$lang.invo_title}</td>
+      <td>
+       {$order.invo_title}
+      </td>
+     </tr>
+      <tr>
+       <td width="90" align="right">{$lang.invo_content}</td>
+       <td>
+        {$order.invo_content}
+       </td>
+      </tr>
+      {else }
+       <tr>
+        <td width="90" align="right">{$lang.invo_type}</td>
+        <td>
+         {$lang.invo_spec}
+
+        </td>
+       </tr>
+       <tr>
+        <td width="90" align="right">{$lang.invo_company}</td>
+        <td>
+         {$order.invo_company}
+        </td>
+       </tr>
+       <tr>
+        <td width="90" align="right">{$lang.invo_taxno}</td>
+        <td>
+         {$order.invo_taxno}
+        </td>
+       </tr>
+      <tr>
+       <td width="90" align="right">{$lang.invo_taxno}</td>
+       <td>
+        {$order.invo_taxno}
+       </td>
+      </tr>
+      <tr>
+       <td width="90" align="right">{$lang.invo_address}</td>
+       <td>
+        {$order.invo_address}
+       </td>
+      </tr>
+      <tr>
+       <td width="90" align="right">{$lang.invo_phone}</td>
+       <td>
+        {$order.invo_phone}
+       </td>
+      </tr>
+
+      <tr>
+       <td width="90" align="right">{$lang.invo_bank}</td>
+       <td>
+        {$order.invo_bank}
+       </td>
+      </tr>
+      <tr>
+       <td width="90" align="right">{$lang.invo_account}</td>
+       <td>
+        {$order.invo_account}
+       </td>
+      </tr>
+
+       {/if}
+      <tr>
+       <td width="90" align="right">{$lang.order_create_time}</td>
+       <td>
+        {$order.order_create_time}
+       </td>
+      </tr>
+
+     </table>
+    </form>
+    <!-- {/if} -->
+   </div>
+ </div>
+ {include file="footer.htm"}
+ </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--[if IE 6]>
+{literal}
+<style>
+body {behavior: url("csshover.htc");}
+</style>
+{/literal}
+<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>{$page_title}</title>
+<link href="bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="jianjie.css" rel="stylesheet" type="text/css" />
+<link href="memenu.css" rel="stylesheet" type="text/css" media="all" />
+<link href="header.css" rel="stylesheet" type="text/css" media="all" />
+<link href="footer.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="images/jquery.min.js"></script>
+<script type="text/javascript" src="images/global.js"></script>
+<script type="text/javascript" src="images/memenu.js"></script>
+<script src="images/footer.js"></script>
+{literal}<script>$(document).ready(function(){$(".memenu").memenu();});</script>{/literal}
+</head>
+
+<body>
+  {include file="inc/header.tpl"}
+<div class="jianjie_main"  style="padding-top:30px;">
+
+<div class="main_left">
+<!--  qq交谈 -->
+{include file="inc/page_left.tpl"}
+</div>
+
+<div class="main_right">
+
+  <img class="xiasanjiao" src="images/jianjie_3.png" alt="下三角">
+  {include file="inc/ur_here.tpl"}
+  <!-- <h2><a href="index.html"><span>  网站首页</span></a>&nbsp;>&nbsp;<a href="new-list.html"><span>新闻列表</span></a>&nbsp;>&nbsp;<span>上半年部分稀土价格下滑近60% 北方稀土限产一成保价</span> </h2> -->
+  <hr>
+  
+  <div class="detail_new">
+  <h3 style="padding-left:30px;">{$article.title}</h3>
+  <h5 class="arro_top">
+  <b>{$lang.add_time}：{$article.add_time}</b>  <span>信息来源:{$article.laiyuan} </span> <b>浏览次数：<i>{$article.click}</i> </b>
+  
+  <h5/>
+  
+  </div>
+  
+ <div class="deail_word">
+  {$article.content}
+ </div>
+  </div>
+
+</div>
+{include file="inc/footer.tpl"} 
+</body>
+</html>
