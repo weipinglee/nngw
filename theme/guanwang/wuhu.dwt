@@ -94,25 +94,25 @@ win.height = win.Document.body.scrollHeight;
 			 <div class="col-md-6 feature-grid">
 				<div class="new_head">
 					<h4 class="icon_1">
-						{$recommend_article.news.name}
+						{$recommend_article.yeji.name}
 					</h4>
 					<span>
-						<a href="{$recommend_article.news.url}">
+						<a href="{$recommend_article.yeji.url}">
 							更多>>
 						</a>
 					</span>
 				</div>
 				<div class="news_con">
 					<div class="news_top">
-						<img src="{$recommend_article.news.article.0.image}" style="width:129px;height:82px;"/>
+						<img src="{$recommend_article.yeji.article.0.image}" style="width:129px;height:82px;"/>
 						<h4>
-							<a href="{$recommend_article.news.article.0.url}">{$recommend_article.news.article.0.title}
+							<a href="{$recommend_article.yeji.article.0.url}">{$recommend_article.yeji.article.0.title}
 							</a>
 						</h4>
-						<span class="time">{$recommend_article.news.article.0.add_time_short}</span>
+						<span class="time">{$recommend_article.yeji.article.0.add_time_short}</span>
 					</div>
 					<ul>
-						<!-- {foreach from=$recommend_article.news.article name=news_article key=artkey item=article} -->
+						<!-- {foreach from=$recommend_article.yeji.article name=news_article key=artkey item=article} -->
 						<!--{if $artkey eq 0}-->
 						<!--{else}-->
 						<li >
@@ -134,9 +134,9 @@ win.height = win.Document.body.scrollHeight;
 {/literal}
 			
 			 <div class="col-md-6 feature-grid">
-				<div class="new_head"><h4 class="icon_2">{$recommend_article.hangqing.name}</h4>
+				<div class="new_head"><h4 class="icon_2">{$recommend_article.riji.name}</h4>
 					<span class="change">
-						<a href="{$recommend_article.hangqing.url}">
+						<a href="{$recommend_article.riji.url}">
 						更多>>
 					</a>
 				
@@ -145,12 +145,12 @@ win.height = win.Document.body.scrollHeight;
 				
 				<div class="news_con">
 					<div class="news_top">
-						<img src="{$recommend_article.hangqing.article.0.image}" style="width:129px;height:82px;"/>
-						<h4><a href="{$recommend_article.hangqing.article.0.url}">{$recommend_article.hangqing.article.0.title}</a></h4>
-						<span class="time">{$recommend_article.hangqing.article.0.add_time_short}</span>
+						<img src="{$recommend_article.riji.article.0.image}" style="width:129px;height:82px;"/>
+						<h4><a href="{$recommend_article.riji.article.0.url}">{$recommend_article.riji.article.0.title}</a></h4>
+						<span class="time">{$recommend_article.riji.article.0.add_time_short}</span>
 					</div>
 					<ul>
-						<!-- {foreach from=$recommend_article.hangqing.article name=hangqing_article key=artkey item=article} -->
+						<!-- {foreach from=$recommend_article.riji.article name=hangqing_article key=artkey item=article} -->
 						<!--{if $artkey eq 0}-->
 						<!--{else}-->
 						<li><span><a href="{$article.url}">{$article.title|truncate:26:"..."}</a></span>
@@ -162,42 +162,7 @@ win.height = win.Document.body.scrollHeight;
 			 </div>
 			 <div class="clearfix"></div>
 		 </div>
-		 <div class="items-sec btm-sec">
-			 <div class="col-md-6 feature-grid">
-				<div class="new_head"><h4 class="icon_3">{$recommend_article.video.name}
-</h4><span><a href="{$recommend_article.video.url}">
-						更多>>
-					</a></span></div>
-				<div class="news_con">
-					<div class="news_top">
-						<img src="{$recommend_article.video.article.0.image}" style="width:129px;height:82px;"/>
-						<h4><a href="{$recommend_article.video.article.0.url}">{$recommend_article.video.article.0.title}</a></h4>
-						<span class="time">{$recommend_article.video.article.0.add_time_short}</span>
-					</div>
-					<ul>
-						<!-- {foreach from=$recommend_article.video.article name=video_article key=artkey item=article} -->
-						<!--{if $artkey eq 0}-->
-						<!--{else}-->
-						<li><span><a href="{$article.url}">{$article.title|truncate:26:"..."}</a></span>
-						<span class="time">{$article.add_time_short}</span></li>
-						<!--{/if}-->
-						<!-- {/foreach} -->
-					</ul>
-				</div>
-			 </div>
-			 <div class="col-md-6 feature-grid">
-				<div class="new_head"><h4 class="icon_4">移动端产品</h4><span>更多>></span></div>
-				<div class="news_con">
-					<div class="moblie">							
-						<div class="code">
-							<img src="images/APP_05.png"/>
-						</div>
-						<div class="APP">
-							<img src="images/APP_07.png"/>
-						</div>
-					</div>
-				</div>
-			 </div>
+		
 			 <div class="clearfix"></div>
 		 </div>
 	 </div>
