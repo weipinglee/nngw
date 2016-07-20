@@ -109,10 +109,11 @@ win.height = win.Document.body.scrollHeight;
 				</div>
 				<div class="news_con">
 					<div class="news_top">
-						<img src="{$recommend_article.news.article.0.image}" style="width:129px;height:82px;"/>
+						<img src="{$recommend_article.news.article.0.image}"/>
 						<h4>
 							<a href="{$recommend_article.news.article.0.url}">{$recommend_article.news.article.0.title}
 							</a>
+							<a href="{$recommend_article.news.article.0.url}">{$recommend_article.news.article.0.title}</a>
 						</h4>
 						<span class="time">{$recommend_article.news.article.0.add_time_short}</span>
 					</div>
@@ -150,7 +151,7 @@ win.height = win.Document.body.scrollHeight;
 				
 				<div class="news_con">
 					<div class="news_top">
-						<img src="{$recommend_article.hangqing.article.0.image}" style="width:129px;height:82px;"/>
+						<img src="{$recommend_article.hangqing.article.0.image}"/>
 						<h4><a href="{$recommend_article.hangqing.article.0.url}">{$recommend_article.hangqing.article.0.title}</a></h4>
 						<span class="time">{$recommend_article.hangqing.article.0.add_time_short}</span>
 					</div>
@@ -174,8 +175,9 @@ win.height = win.Document.body.scrollHeight;
 						更多>>
 					</a></span></div>
 				<div class="news_con">
-					<!-- <div class="news_top">
-						<img src="{$recommend_article.video.article.0.image}" style="width:129px;height:82px;"/>
+					<!-- 
+					<div class="news_top">
+						<img src="{$recommend_article.video.article.0.image}"/>
 						<h4><a href="{$recommend_article.video.article.0.url}">{$recommend_article.video.article.0.title}</a></h4>
 						<span class="time">{$recommend_article.video.article.0.add_time_short}</span>
 					</div> -->
