@@ -31,7 +31,8 @@ if ($_REQUEST['s']) {
 $sql = "SELECT * FROM " . $dou->table('page') . " WHERE id = '1'";
 $query = $dou->query($sql);
 $about = $dou->fetch_array($query);
-
+/*var_dump($about);
+die;*/
 // 写入到index数组
 $index['about_name'] = $about['page_name'];
 $index['about_content'] = $dou->dou_substr($about['content'], 300);
@@ -69,6 +70,7 @@ foreach($cate as $key => $val){
 }
 // print_r($dou->get_list('article', 'ALL', $_DISPLAY['home_article'], 'sort DESC'));exit;
 // print_r( $cate );exit();
+var_dump($cate);die;
 $smarty->assign('recommend_article', $cate);
 
 $smarty->display('index.dwt');

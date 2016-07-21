@@ -78,11 +78,15 @@ class Common extends DbMysql {
         $setting = $this->read_system();
         $module['column'] = array_filter($setting['column_module']);
         $module['single'] = array_filter($setting['single_module']);
-        $module['all'] = array_merge($module['column'], $module['single']); 
-        
+        $module['all'] = array_merge($module['column'], $module['single']);
         // 读取模块语言文件
+     /*   var_dump($GLOBALS);
+        die*/;
         $lang_path = ROOT_PATH . 'languages/' . (defined('IS_ADMIN') ? 'zh_cn/admin/' : $GLOBALS['_CFG']['language'] . '/');
+        //var_dump($GLOBALS['_CFG']['language']);
         $lang_list = glob($lang_path . '*.lang.php');
+   /*     var_dump($lang_list);
+        die;*/
         foreach ($lang_list as $lang) {
             $module['lang'][] = $lang;
         }
@@ -109,7 +113,7 @@ class Common extends DbMysql {
                 $setting[$arr[0]] = explode(',', $arr[1]);
             }
         }
-        
+
         return $setting;
     }
     
@@ -141,7 +145,7 @@ class Common extends DbMysql {
                 $url[$value] = $this->rewrite_url($GLOBALS['subbox']['module'], $value);
             }
         }
-        
+
         return $url;
     }
     

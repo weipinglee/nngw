@@ -32,7 +32,6 @@ class Action extends Common {
         $number = unserialize($GLOBALS['_CFG']['update_number']);
         $number['system'] = $number['update'] + $number['patch'];
         $GLOBALS['smarty']->assign('unum', $number);
-        
         // 计算工作空间高度
         if ($GLOBALS['_MODULE']['all']) {
             $height = (count($menu_list['single']) * 43) + (count($menu_list['column']) * 86) + 280;
@@ -42,7 +41,6 @@ class Action extends Common {
         }
         $height = $height < 550 ? 550 : $height;
         $workspace['height'] = 'height:auto!important;height:'.$height.'px;min-height:'.$height.'px;';
-        
         return $workspace;
     }
     
@@ -178,6 +176,7 @@ class Action extends Common {
      * +----------------------------------------------------------
      */
     function get_menu_list() {
+       // var_dump($GLOBALS['_MODULE']['column']);
         foreach ($GLOBALS['_MODULE']['column'] as $value) {
             $menu_list['column'][] = array (
                     'name_category' => $value . '_category',
@@ -186,14 +185,13 @@ class Action extends Common {
                     'lang' => $GLOBALS['_LANG'][$value]
             );
         }
-
+        //var_dump($menu_list['column']);die;
         foreach ($GLOBALS['_MODULE']['single'] as $value) {
             $menu_list['single'][] = array (
                     'name' => $value,
                     'lang' => $GLOBALS['_LANG'][$value]
             );
         }
-        
         return $menu_list;
     }
 

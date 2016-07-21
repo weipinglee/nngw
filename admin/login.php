@@ -40,8 +40,8 @@ if ($rec == 'default') {
  */
 elseif ($rec == 'login') {
 
-    if ($check->is_captcha(trim($_POST['captcha'])) && $_CFG['captcha'])
-        $_POST['captcha'] = strtolower(trim($_POST['captcha']));
+   // if ($check->is_captcha(trim($_POST['captcha'])) && $_CFG['captcha'])
+     //   $_POST['captcha'] = strtolower(trim($_POST['captcha']));
     
     if (!$_POST['user_name']) {
         $dou->dou_msg($_LANG['login_input_wrong'], 'login.php', 'out');
@@ -55,7 +55,7 @@ elseif ($rec == 'login') {
     $query = $dou->select($dou->table(admin), '*', "user_name = '$_POST[user_name]'");
     $user = $dou->fetch_array($query);
     
-    if (!is_array($user)) {
+/*    if (!is_array($user)) {
         $dou->create_admin_log($_LANG['login_action'] . ': ' . $_POST['user_name'] . " ( " . $_LANG['login_user_name_wrong'] . " ) ");
         $dou->dou_msg($_LANG['login_input_wrong'], 'login.php', 'out');
         // 登录失败清除验证码
@@ -67,7 +67,7 @@ elseif ($rec == 'login') {
         $dou->dou_msg($_LANG['login_input_wrong'], 'login.php', 'out');
         // 登录失败清除验证码
         unset($_SESSION['captcha']);
-    }
+    }*/
     
     $_SESSION[DOU_ID]['user_id'] = $user['user_id'];
     $_SESSION[DOU_ID]['shell'] = md5($user['user_name'] . $user['password'] . DOU_SHELL);

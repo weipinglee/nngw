@@ -12,7 +12,6 @@
  * Release Date: 2015-06-10
  */
 define('IN_DOUCO', true);
-
 require (dirname(__FILE__) . '/include/init.php');
 
 // rec操作项的初始化
@@ -52,7 +51,12 @@ if ($rec == 'default') {
     
     // 写入目录监测信息
     $sys_info['folder_exists'] = $warning;
-    
+/*    $page=$dou->get_page_list();
+//    /var_dump($page);
+    //var_dump($sys_info);
+   $res=$dou->dou_localsite();
+    var_dump($res);
+    die;*/
     // 赋值给模板
     $smarty->assign('dou_api', $dou->dou_api());
     $smarty->assign('cur', 'index');
@@ -60,7 +64,6 @@ if ($rec == 'default') {
     $smarty->assign('sys_info', $sys_info);
     $smarty->assign("log_list", $dou->get_admin_log($_SESSION[DOU_ID]['user_id'], 4));
     $smarty->assign('localsite', $dou->dou_localsite());
-
     $smarty->display('index.htm');
 } 
 

@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>{$lang.home}{if $ur_here} - {$ur_here} {/if}</title>
+    <meta name="Copyright" content="Douco Design." />
+    <link href="templates/public.css" rel="stylesheet" type="text/css">
+    {include file="javascript.htm"}
+    <script type="text/javascript" src="images/jquery.autotextarea.js"></script>
+</head>
+<body>
+<div id="dcWrap">
+    {include file="header.htm"}
+    <div id="dcLeft">{include file="menu.htm"}</div>
+    <div id="dcMain">
+        {include file="ur_here.htm"}
+        <div class="mainBox" style="{$workspace.height}">
+            <!-- {if $rec eq 'default'} 招聘列表 -->
+            <h3><a href="{$action_link.next}" class="actionBtn add">{$action_link.text}</a>{$ur_here}</h3>
+       <div class="filter">
+                <form action="frdLink.php" method="post">
+                    <input name="keyword" type="text" class="inpMain" value="{$keyword}" size="20" />
+                    <input name="submit" class="btnGray" type="submit" value="{$lang.btn_filter}" />
+                </form>
+
+            </div
+            <!-- {if $if_sort} -->
+            <div class="homeSortRight">
+                <ul class="homeSortBg">
+                    {$sort_bg}
+                </ul>
+                <ul class="homeSortList">
+                    <!-- {foreach from=$sort name=sort item=zhaopin} -->
+                    <li>
+                        <em>{$zhaopin.job}</em>
+                        <a href="zhaopin.php?rec=del_sort&id={$zhaopin.id}" title="{$lang.sort_cancel}">X</a>
+                    </li>
+                    <!-- {/foreach} -->
+                </ul>
+            </div>
+            <!-- {/if} -->
+            <div id="list"{if $if_sort} class="homeSortLeft"{/if}>
+            <form name="action" method="post" action="frdLink.php?rec=del_all">
+                <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+                    <tr>
+                        <th width="22" align="center"><input name='chkall' type='checkbox' id='chkall' onclick='selectcheckbox(this.form)' value='check'></th>
+                        <th width="40" align="center">{$lang.link_id}</th>
+                        <th width="100">{$lang.frdlink_name}</th>
+                        <th width="200" align="center">{$lang.frdlink_url}</th>
+                        <th width="80" align="center">{$lang.frdlink_img}</th>
+                        <th width="60" align="center">{$lang.frdlink_status}</th>
+                        <th width="80" align="center">{$lang.handler}</th>
+                    </tr>
+                    <!-- {foreach from=$frdLinkList item=frdLink} -->
+                    <tr>
+                        <td align="center"><input type="checkbox" name="checkbox[]" value="{$frdLink.id}" /></td>
+                        <td align="center">{$frdLink.id}</td>
+                        <td align="center">{$frdLink.name}</td>
+                        <td align="center">{$frdLink.url}</td>
+                        <td><!-- {if $frdLink.img} --> <a href="../{$frdLink.img}" target="_blank"><img src="../{$frdLink.img}" width="100" height="100" align="absMiddle"></a><!-- {/if} --></td>
+
+                        <td align="center">{if $frdLink.status eq 1}启用{else}禁用{/if}</td>
+                        <td align="center">
+                            <a href="frdLink.php?rec=edit&id={$frdLink.id}">{$lang.edit}</a> | <a href="frdLink.php?rec=del&id={$frdLink.id}">{$lang.del}</a>
+                        </td>
+                    </tr>
+                    <!-- {/foreach} -->
+                </table>
+                <div class="action">
+                    <select name="action" onchange="douAction()">
+                        <option value="0">{$lang.select}</option>
+                        <option value="del_all">{$lang.del_all}</option>
+                    </select>
+                    <input name="submit" class="btn" type="submit" value="{$lang.btn_execute}" />
+                </div>
+            </form>
+        </div>
+        <div class="clear"></div>
+        {include file="pager.htm"}
+        <!-- {/if} -->
+        <!-- {if $rec eq 'add' || $rec eq 'edit'} 招聘添加或编辑 -->
+        <h3><a href="{$action_link.next}" class="actionBtn">{$action_link.text}</a>{$ur_here}</h3>
+        <form action="frdLink.php?rec={$form_action}" method="post" enctype="multipart/form-data">
+            <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+                <tr>
+                    <td width="90" align="right">{$lang.frdlink_name}</td>
+                    <td>
+                        <input type="text" name="name" value="{$frdlink.name}" size="80" class="inpMain" />
+                    </td>
+                </tr>
+                <tr>
+                    <td width="90" align="right">{$lang.frdlink_url}</td>
+                    <td><input type="text" name="url" value="{$frdlink.url}" size="80" class="inpMain" /></td>
+                </tr>
+                {if $frdlink.img}
+                <tr>
+                    <td align="right">原图片 </td>
+                    <td><img src="../{$frdlink.img}" height="250">
+                    <span style="color:red;"><b>上传新图片会替换原图片</b></span>
+                    </td>
+                    </tr>
+                {/if}
+                <!-- 新增一个岗位工资 -->
+                <tr>
+                    <td align="right">{$lang.frdlink_img}</td>
+                    <td>
+                        <input type="file" name="img" class="inpFlie" />
+                    </td>
+                </tr>
+                <!--新增岗位工资结束-->
+                <tr>
+                    <td align="right">{$lang.status}</td>
+                    <td>
+                        <input type="radio" name="status" value="1"  {if $frdlink.status eq 1}checked="checked"{/if} />启用
+                        <input type="radio" name="status" value="0" {if $frdlink.status eq 0}checked="checked"{/if} />禁用
+                    </td>
+                    </tr>
+
+                <!-- <tr>
+                 <td align="right">{$lang.thumb}</td>
+                 <td>
+                  <input type="file" name="image" size="38" class="inpFlie" />
+                  {if $zhaopin.image}<a href="../{$zhaopin.image}" target="_blank"><img src="images/icon_yes.png"></a>{else}<img src="images/icon_no.png">{/if}</td>
+                </tr>
+                <tr>
+                 <td align="right">{$lang.keywords}</td>
+                 <td>
+                  <input type="text" name="keywords" value="{$zhaopin.keywords}" size="50" class="inpMain" />
+                 </td>
+                </tr>
+                <tr>
+                 <td align="right">{$lang.description}</td>
+                 <td>
+                  <input type="text" name="description" value="{$zhaopin.description}" size="50" class="inpMain" />
+                 </td>
+                </tr> -->
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="hidden" name="token" value="{$token}" />
+                            <input type="hidden" name="image" value="{$frdlink.img}">
+                        <input type="hidden" name="id" value="{$frdlink.id}">
+                        <input name="submit" class="btn" type="submit" value="{$lang.btn_submit}" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <!-- {/if} -->
+    </div>
+</div>
+{include file="footer.htm"}
+</div>
+<script type="text/javascript">
+    {literal}
+    onload = function()
+    {
+        document.forms['action'].reset();
+    }
+
+    function douAction()
+    {
+        var frm = document.forms['action'];
+
+        frm.elements['new_cat_id'].style.display = frm.elements['action'].value == 'category_move' ? '' : 'none';
+    }
+    {/literal}
+</script>
+</body>
+</html>

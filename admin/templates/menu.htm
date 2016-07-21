@@ -25,6 +25,9 @@
  <!--{if $menu.name=='product'}-->
   <li{if $cur eq 'product_sell'} class="cur"{/if}><a href="{$menu.name}.php?type=1"><i class="{$menu.name}"></i><em>销售商品</em></a></li>
   <!--{/if}-->
+ <!--{if $menu.name eq 'article'}-->
+   <li{if $cur eq 'product_sell'} class="cur"{/if}><a href="{$menu.name}.php?type=1"><i class="{$menu.name}"></i><em>工程案例</em></a></li>
+ <!--{/if}-->
  </ul>
  <!-- {/foreach} -->
  <!-- {if $workspace.menu_single} -->

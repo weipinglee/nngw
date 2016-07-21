@@ -104,8 +104,7 @@ elseif ($rec == 'add') {
             'text' => $_LANG['zhaopin'],
             'href' => 'zhaopin.php' 
     ));
-    
-    // 格式化自定义参数，并存到数组$zhaopin，文章编辑页面中调用文章详情也是用数组$zhaopin，
+
     if ($_DEFINED['zhaopin']) {
         $defined = explode(',', $_DEFINED['zhaopin']);
         foreach ($defined as $row) {

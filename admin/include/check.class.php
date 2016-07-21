@@ -154,6 +154,16 @@ class Check {
         
         return true;
     }
-
+    /*
+     * 验证url是否正确
+     * */
+    function is_url($url){
+        $pattern='/\b(([\w-]+:\/\/?|www[.])[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|\/)))/';
+        if(preg_match($pattern,$url)){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 ?>

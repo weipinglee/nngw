@@ -27,12 +27,11 @@ if (PHP_VERSION >= '5.1') {
 }
 
 include_once ('../data/config.php');
-
-// 定义常量
+// 定义常量根目录
 define('ROOT_PATH', str_replace(ADMIN_PATH . '/include/init.php', '', str_replace('\\', '/', __FILE__)));
+//域名
 define('ROOT_URL', preg_replace('/' . ADMIN_PATH . '\//Ums', '', dirname('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']) . "/"));
 define('IS_ADMIN', true);
-
 if (!file_exists(ROOT_PATH . "data/system.dou")) {
     header("Location: ../install/index.php\n");
     exit();
@@ -44,7 +43,6 @@ require (ROOT_PATH . 'include/common.class.php');
 require (ROOT_PATH . ADMIN_PATH . '/include/action.class.php');
 require (ROOT_PATH . ADMIN_PATH . '/include/check.class.php');
 require (ROOT_PATH . 'include/firewall.class.php');
-
 // 实例化类
 $dou = new Action($dbhost, $dbuser, $dbpass, $dbname, $prefix, DOU_CHARSET);
 $check = new Check();
@@ -53,7 +51,6 @@ $firewall = new Firewall();
 // 定义系统标示
 define('DOU_SHELL', $dou->get_one("SELECT value FROM " . $dou->table('config') . " WHERE name = 'hash_code'"));
 define('DOU_ID', 'admin_' . substr(md5(DOU_SHELL . 'admin'), 0, 5));
-
 // 豆壳防火墙
 $firewall->dou_firewall();
 
@@ -87,15 +84,18 @@ $smarty->assign("site", $_CFG = $dou->get_config());
 
 // 系统模块
 $_MODULE = $dou->dou_module();
-
+//var_dump($_MODULE);
+//die;
 // 载入语言文件
 foreach ($_MODULE['lang'] as $lang_file) {
     require ($lang_file); // 载入系统语言文件
 }
-
+//var_dump($_LANG);
+//die;
 // 工作空间
 $smarty->assign("workspace", $dou->dou_workspace());
-
+/*var_dump($dou->dou_workspace());
+die;*/
 // 通用信息调用
 $smarty->assign("lang", $_LANG);
 $_DISPLAY = unserialize($_CFG['display']); // 显示设置
