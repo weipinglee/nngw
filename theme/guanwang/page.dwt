@@ -34,9 +34,11 @@ body {behavior: url("csshover.htc");}
     <div class="yb_bar">
       <ul>
         <li class="yb_top">返回顶部</li>
-        <li class="yb_phone">4008-123-456</li>
+        <li class="yb_phone">{$site.tel}</li>
         <li class="yb_QQ">
-          <a href="http://wpa.qq.com/msgrd?v=3&uin={$qq}&site=qq&menu=yes" target="_blank" title="即刻发送您的需求">在线咨询</a>
+            {foreach from=$site.qq item=item name=qq}
+          <a href="http://wpa.qq.com/msgrd?v=3&uin={$item}&site=qq&menu=yes" target="_blank" title="即刻发送您的需求">在线咨询</a>
+            {/foreach}
         </li>
         <li class="yb_ercode" style="height:53px;">扫描二维码 <br>
           <img class="hd_qr" src="images/weixin.jpg" width="125" alt="关注你附近"> </li>

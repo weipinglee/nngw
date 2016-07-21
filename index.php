@@ -49,8 +49,28 @@ $smarty->assign('nav_top_list', $dou->get_nav('top'));
 $smarty->assign('nav_middle_list', $dou->get_nav('middle'));
 //var_dump($dou->get_nav('middle'));exit;
 $smarty->assign('nav_bottom_list', $dou->get_nav('bottom'));
+//获取友情链接
+$sql='SELECT * FROM'.$dou->table('frdlink').' where status=1 order by id desc';
+$query=$dou->query($sql);
+$frdlink=array();
+while($arr=$dou->fetch_assoc($query)){
 
+    $frdlink[]=[
+    'id'=>$arr['id'],
+    'img'=>$arr['img'],
+    'url'=>$arr['url'],
+    'name'=>$arr['name']
+    ];
+}
+//获得首页视频数据
+$sql="select * from".$dou->table('article').' as a left join'.$dou->table('article_category'). ' as c on a.cat_id=c.cat_id where c.unique_id = \'shipin\' order by id desc limit 1';
+//echo $sql;
+$query=$dou->query($sql);
+$video=$dou->fetch_assoc($query);
+//var_dump($vedio);
 // 赋值给模板-数据
+$smarty->assign('video',$video);
+$smarty->assign('frdlink',$frdlink);
 $smarty->assign('show_list', $dou->get_show_list());
 $smarty->assign('link', get_link_list());
 $smarty->assign('index', $index);
@@ -70,9 +90,11 @@ foreach($cate as $key => $val){
 }
 // print_r($dou->get_list('article', 'ALL', $_DISPLAY['home_article'], 'sort DESC'));exit;
 // print_r( $cate );exit();
-var_dump($cate);die;
+//var_dump($cate);die;
 $smarty->assign('recommend_article', $cate);
-
+/*echo "<pre>";
+print_r($cate);
+die;*/
 $smarty->display('index.dwt');
 
 /**

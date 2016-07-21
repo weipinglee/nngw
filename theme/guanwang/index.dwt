@@ -193,20 +193,20 @@ win.height = win.Document.body.scrollHeight;
 					<!-- </ul> -->
 					<div class="home_video">
 						<div class="video_l">
-
-						<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="300" height="240">
+                        {$video.content}
+					<!--	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="300" height="240">
 						<param name="movie" value="http://www.vlongbiz.com/about/images/vcastr22.swf">
 						<param name="quality" value="high">
 						<param name="allowFullScreen" value="true">
 						<param name="FlashVars" value="vcastr_file=http://www.huajian-al.com/new/i/cn3.flv&amp;vcastr_title=视频&amp;BarColor=0x006600&amp;BarPosition=1&amp;IsAutoPlay=0">
 						<embed src="http://www.vlongbiz.com/about/images/vcastr22.swf" allowfullscreen="true" flashvars="vcastr_file=http://www.huajian-al.com/new/i/cn3.flv&amp;vcastr_title=视频&amp;IsAutoPlay=0&amp;BarColor=0x006600&amp;BarPosition=1" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="370" height="200" title="Adobe Flash Player">
-						</object>
+						</object> -->
 						</div>
 
 						<div class="video_r">
-						<a href="http://eoss.wl369.com/" target="_blank"><img src="images/home_ysl.jpg"></a>
-						<a href="http://www.huajianal-ind.com/" target="_blank"><img src="images/home_ysl.jpg"></a>
-						<a href="http://www.shreya.com.cn/" target="_blank"><img src="images/home_ysl.jpg"></a>
+						<!-- {foreach from=$recommend_article.video.article name=video_article key=artkey item=article} -->
+						<a href="{$article.url}" target="_blank"><img src="{$article.image}"></a>
+						<!-- {/foreach} -->
 						</div>
 					</div>
 				</div>

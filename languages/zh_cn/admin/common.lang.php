@@ -154,7 +154,7 @@ $_LANG['about_bbs_a'] = '安装使用';
 $_LANG['about_bbs_b'] = '模板交流';
 $_LANG['about_bbs_c'] = 'BUG反馈';
 $_LANG['about_bbs_d'] = '意见建议';
-
+$_LANG['weixin']='微信二维码';
 // 模块扩展
 $_LANG['extend_title'] = '系统监测到模块安装文件，将执行以下操作';
 $_LANG['extend_cue'] = '提示：模块安装和卸载的方法相同，都是将模块包放"data/dou"目录下，系统会判断模块如果已经安装那么会将此模块执行卸载操作。无论是卸载还是安装，执行后模块包都将被自动删除。';

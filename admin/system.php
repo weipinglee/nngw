@@ -34,6 +34,7 @@ if ($rec == 'default') {
     // 赋值给模板
     $smarty->assign('ur_here', $_LANG['system']);
     $smarty->assign('cfg_list_main', get_cfg_list());
+   // var_dump(get_cfg_list());die;
     $smarty->assign('cfg_list_display', get_cfg_list('display'));
     $smarty->assign('cfg_list_defined', get_cfg_list('defined'));
     if (file_exists(ROOT_PATH . "include/mail.class.php")) // 判断是否存在邮件模块
@@ -58,6 +59,13 @@ if ($rec == 'update') {
         $logo = new Upload($logo_dir, ''); // 实例化类文件
         $upfile = $logo->upload_image('site_logo', 'logo'); // 上传的文件域
         $_POST['site_logo'] = $upfile;
+    }
+    //上传二维码
+    if($_FILES['weixin']['name']!=""){
+        $weixin_dir=ROOT_PATH.'theme/'.$_CFG['site_theme'].'/images/';//微信二维码图片
+        $weixin=new Upload($weixin_dir,'');
+        $weixinFile=$weixin->upload_image('weixin','weixin');
+        $_POST['weixin']=$weixinFile;
     }
     
     // CSRF防御令牌验证
@@ -88,7 +96,8 @@ function get_cfg_list($tab = 'main') {
         
         if ($row['name'] == 'site_logo')
             $row['value'] = $row['value'] ? "theme/" . $GLOBALS['_CFG']['site_theme'] . "/images/" . $row['value'] : '';
-        
+        if($row['name']=='weixin')
+            $row['value']=$row['value'] ? "theme/".$GLOBALS['_CFG']['site_theme'].'/images/'.$row['value']:'';
         if ($row['name'] == 'language')
             $box = $GLOBALS['dou']->get_subdirs(ROOT_PATH . 'languages');
         
@@ -140,7 +149,7 @@ function get_cfg_list($tab = 'main') {
                 "cue" => $cue 
         );
     }
-    
+
     return $cfg_list;
 }
 ?>

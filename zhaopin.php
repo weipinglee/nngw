@@ -71,7 +71,22 @@ $smarty->assign('nav_top_list', $dou->get_nav('top'));
 $smarty->assign('nav_middle_list', $dou->get_nav('middle', '0', 'zhaopin', $cat_id, $cate_info['parent_id']));
 //var_dump($dou->get_nav('middle', '0', 'zhaopin_category', $cat_id, $cate_info['parent_id']));exit;
 $smarty->assign('nav_bottom_list', $dou->get_nav('bottom'));
+//获取友情链接
+$sql='SELECT * FROM'.$dou->table('frdlink').' where status=1 order by id desc';
+$query=$dou->query($sql);
+$frdlink=array();
+while($arr=$dou->fetch_assoc($query)){
+
+    $frdlink[]=[
+        'id'=>$arr['id'],
+        'img'=>$arr['img'],
+        'url'=>$arr['url'],
+        'name'=>$arr['name']
+    ];
+}
+
 // 赋值给模板-数据
+$smarty->assign('frdlink',$frdlink);
 $smarty->assign('ur_here', $dou->ur_here('zhaopin_category', $cat_id));
 $smarty->assign('cate_info', $cate_info);
 $smarty->assign('zhaopin', $zhaopin);

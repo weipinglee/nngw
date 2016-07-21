@@ -2,9 +2,12 @@
 <div class="footer">
 	<div class="line">
    <!--  <img class="hezuo_img" src="images/hezuo.jpg" width="97" height="22" alt="合作企业"> -->
- 
+
 		<div class="img_box">
-			<div class="hztb"><a><img src="../images/icon6.png"></a></div>
+			{foreach from=$frdlink item=item key=key name=frdlink}
+				{if $key eq 11}{php}break;{/php}{/if}
+			<div class="hztb"><a href="{$item.url}" target="_blank"><img src="./{$item.img}"></a></div>
+			{/foreach}{*
 			<div class="hztb"><a><img src="../images/icon7.png"></a></div>
 			<div class="hztb"><a><img src="../images/icon8.png"></a></div>
 			<div class="hztb"><a><img src="../images/icon7.png"></a></div>
@@ -12,7 +15,7 @@
 			<div class="hztb"><a><img src="../images/icon7.png"></a></div>
 			<div class="hztb"><a><img src="../images/icon6.png"></a></div>
 			<div class="hztb"><a><img src="../images/icon7.png"></a></div>
-			<div class="hztb"><a><img src="../images/icon6.png"></a></div>
+			<div class="hztb"><a><img src="../images/icon6.png"></a></div>*}
 
 		   <!-- <a href="http://bank.ecitic.com/" target="_blank" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image2','','theme/guanwang/images/hezuo_1.png',1)"><img src="images/hezuo_1.jpg" width="44" height="44" id="Image2">
 		   </a><a href="#" target="_blank" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image3','','theme/guanwang/images/hezuo_2.png',1)"><img src="images/hezuo_2.jpg" width="44" height="44" id="Image3"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image2','','theme/guanwang/images/hezuo_1.png',1)"> </a>
@@ -25,11 +28,14 @@
 		</div>
     </div>
     <div class="contact">
-    	<div class="erm_img"><img src="../images/erwm.jpg"></div>
+    	<div class="erm_img"><img src="images/{$site.weixin}"></div>
     	<div class="lxfs">
     		<p>联系电话</p>
-			<p>4006-238-086</p>
+			<p>{$site.tel}</p>
 			<p>咨询QQ</p>
+			{foreach from=$site.qq item=item}
+			<p>{$item}</p>
+			{/foreach}
 			<p><a class="lxwm">联系我们</a></p>
     	</div>
     </div>
