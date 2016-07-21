@@ -113,8 +113,8 @@ win.height = win.Document.body.scrollHeight;
 						<h4>
 							<a href="{$recommend_article.news.article.0.url}">{$recommend_article.news.article.0.title}
 							</a>
-							<a href="{$recommend_article.news.article.0.url}">{$recommend_article.news.article.0.title}</a>
 						</h4>
+						<a href=""><p class="limit"></p></a>
 						<span class="time">{$recommend_article.news.article.0.add_time_short}</span>
 					</div>
 					<ul>
@@ -153,6 +153,7 @@ win.height = win.Document.body.scrollHeight;
 					<div class="news_top">
 						<img src="{$recommend_article.hangqing.article.0.image}"/>
 						<h4><a href="{$recommend_article.hangqing.article.0.url}">{$recommend_article.hangqing.article.0.title}</a></h4>
+						<a href=""><p class="limit"></p></a>
 						<span class="time">{$recommend_article.hangqing.article.0.add_time_short}</span>
 					</div>
 					<ul>

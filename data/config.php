@@ -22,7 +22,7 @@ $dbname   = "guanwang";
 $dbuser   = "root";
 
 // database password
-$dbpass   = "";
+$dbpass   = "127890";
 
 // table prefix
 $prefix   = "dou_";

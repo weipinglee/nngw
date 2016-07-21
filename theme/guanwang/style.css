@@ -2613,6 +2613,7 @@ input.item_add.items {
 }
 
 .wrap{max-width:1190px !important;}
+
 .home_video{
 	padding-top:30px; 
 }
@@ -2628,3 +2629,12 @@ input.item_add.items {
 	padding:0 0 5px 0;
 	height: 68px; 
 }
+
+
+.limit{height:95px;
+ margin:0;
+ display:block;
+ width:552px; padding-top: 10px;text-indent: 24px;overflow: hidden;
+ white-space: nowrap;
+ text-overflow:ellipsis;}
+
