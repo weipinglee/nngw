@@ -26,6 +26,9 @@ body {behavior: url("csshover.htc");}
 <link href="memenu.css" rel="stylesheet" type="text/css" media="all" />
 <link href="header.css" rel="stylesheet" type="text/css" media="all" />
 <link href="footer.css" rel="stylesheet" type="text/css" media="all" />
+<link href="swiper.css" rel="stylesheet" type="text/css" media="all" />
+<link href="owl_style.css" rel="stylesheet" type="text/css" media="all" />
+
 <script src="images/jquery.min.js"></script>
 <script type="text/javascript" src="images/slide_show.js"></script>
 {literal}
@@ -35,6 +38,8 @@ body {behavior: url("csshover.htc");}
 <script src="images/simpleCart.min.js"> </script>{/literal}
 <script type="text/javascript" src="images/memenu.js"></script>
 <script src="images/footer.js"></script>
+<script  src="images/swiper.js"></script>
+<script src="images/swiper_t.js"></script>
 {literal}<script>$(document).ready(function(){$(".memenu").memenu();});</script>{/literal}
 
 {literal}
@@ -51,7 +56,7 @@ body {behavior: url("csshover.htc");}
 })() 
 </script>
 {/literal}
-<script type="text/javascript" src="images/slide_show.js"></script>
+
 
 </head>
 <body> 
@@ -104,11 +109,12 @@ win.height = win.Document.body.scrollHeight;
 				</div>
 				<div class="news_con">
 					<div class="news_top">
-						<img src="{$recommend_article.news.article.0.image}" style="width:129px;height:82px;"/>
+						<img src="{$recommend_article.news.article.0.image}"/>
 						<h4>
 							<a href="{$recommend_article.news.article.0.url}">{$recommend_article.news.article.0.title}
 							</a>
 						</h4>
+						<a href=""><p class="limit"></p></a>
 						<span class="time">{$recommend_article.news.article.0.add_time_short}</span>
 					</div>
 					<ul>
@@ -145,8 +151,9 @@ win.height = win.Document.body.scrollHeight;
 				
 				<div class="news_con">
 					<div class="news_top">
-						<img src="{$recommend_article.hangqing.article.0.image}" style="width:129px;height:82px;"/>
+						<img src="{$recommend_article.hangqing.article.0.image}"/>
 						<h4><a href="{$recommend_article.hangqing.article.0.url}">{$recommend_article.hangqing.article.0.title}</a></h4>
+						<a href=""><p class="limit"></p></a>
 						<span class="time">{$recommend_article.hangqing.article.0.add_time_short}</span>
 					</div>
 					<ul>
@@ -169,32 +176,118 @@ win.height = win.Document.body.scrollHeight;
 						更多>>
 					</a></span></div>
 				<div class="news_con">
+					<!-- 
 					<div class="news_top">
-						<img src="{$recommend_article.video.article.0.image}" style="width:129px;height:82px;"/>
+						<img src="{$recommend_article.video.article.0.image}"/>
 						<h4><a href="{$recommend_article.video.article.0.url}">{$recommend_article.video.article.0.title}</a></h4>
 						<span class="time">{$recommend_article.video.article.0.add_time_short}</span>
-					</div>
-					<ul>
+					</div> -->
+					<!-- <ul> -->
 						<!-- {foreach from=$recommend_article.video.article name=video_article key=artkey item=article} -->
 						<!--{if $artkey eq 0}-->
 						<!--{else}-->
-						<li><span><a href="{$article.url}">{$article.title|truncate:26:"..."}</a></span>
-						<span class="time">{$article.add_time_short}</span></li>
+						<!-- <li><span><a href="{$article.url}">{$article.title|truncate:26:"..."}</a></span>
+						<span class="time">{$article.add_time_short}</span></li> -->
 						<!--{/if}-->
 						<!-- {/foreach} -->
-					</ul>
+					<!-- </ul> -->
+					<div class="home_video">
+						<div class="video_l">
+
+						<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="300" height="240">
+						<param name="movie" value="http://www.vlongbiz.com/about/images/vcastr22.swf">
+						<param name="quality" value="high">
+						<param name="allowFullScreen" value="true">
+						<param name="FlashVars" value="vcastr_file=http://www.huajian-al.com/new/i/cn3.flv&amp;vcastr_title=视频&amp;BarColor=0x006600&amp;BarPosition=1&amp;IsAutoPlay=0">
+						<embed src="http://www.vlongbiz.com/about/images/vcastr22.swf" allowfullscreen="true" flashvars="vcastr_file=http://www.huajian-al.com/new/i/cn3.flv&amp;vcastr_title=视频&amp;IsAutoPlay=0&amp;BarColor=0x006600&amp;BarPosition=1" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="370" height="200" title="Adobe Flash Player">
+						</object>
+						</div>
+
+						<div class="video_r">
+						<a href="http://eoss.wl369.com/" target="_blank"><img src="images/home_ysl.jpg"></a>
+						<a href="http://www.huajianal-ind.com/" target="_blank"><img src="images/home_ysl.jpg"></a>
+						<a href="http://www.shreya.com.cn/" target="_blank"><img src="images/home_ysl.jpg"></a>
+						</div>
+					</div>
 				</div>
 			 </div>
 			 <div class="col-md-6 feature-grid">
-				<div class="new_head"><h4 class="icon_4">移动端产品</h4><span>更多>></span></div>
+				<div class="new_head"><h4 class="icon_4">工程案例</h4><span>更多>></span></div>
 				<div class="news_con">
 					<div class="moblie">							
-						<div class="code">
+						<!-- <div class="code">
 							<img src="images/APP_05.png"/>
 						</div>
 						<div class="APP">
 							<img src="images/APP_07.png"/>
-						</div>
+						</div> -->
+						 <!-- Swiper -->
+    <div class="swiper-container swiper-container-horizontal swiper-container-free-mode">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+            	<div class="title_img">
+            		<img src="images/si.jpg"/>
+            		<p>花式台灯</p>
+            	</div>          	
+            </div>
+            <div class="swiper-slide">
+            	<div class="title_img">
+            		<img src="images/si2.jpg"/>
+            		<p>加拿大古堡</p>
+            	</div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="title_img">
+            		<img src="images/si3.jpg"/>
+            		<p>花式台灯</p>
+            	</div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="title_img">
+            		<img src="images/si.jpg"/>
+            		<p>花式台灯</p>
+            	</div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="title_img">
+            		<img src="images/si2.jpg"/>
+            		<p>花式台灯</p>
+            	</div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="title_img">
+            		<img src="images/si3.jpg"/>
+            		<p>花式台灯</p>
+            	</div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="title_img">
+            		<img src="images/si.jpg"/>
+            		<p>花式台灯</p>
+            	</div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="title_img">
+            		<img src="images/si2.jpg"/>
+            		<p>花式台灯</p>
+            	</div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="title_img">
+            		<img src="images/si3.jpg"/>
+            		<p>花式台灯</p>
+            	</div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="title_img">
+            		<img src="images/si.jpg"/>
+            		<p>花式台灯</p>
+            	</div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        
+    </div>
 					</div>
 				</div>
 			 </div>

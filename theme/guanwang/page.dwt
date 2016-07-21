@@ -20,13 +20,30 @@ body {behavior: url("csshover.htc");}
 <link href="jianjie.css" rel="stylesheet" type="text/css" media="all" />
 <link href="header.css" rel="stylesheet" type="text/css" media="all" />
 <link href="footer.css" rel="stylesheet" type="text/css" media="all" />
+<link href="zzsc.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="images/jquery.min.js"></script>
 <script type="text/javascript" src="images/global.js"></script>
 <script type="text/javascript" src="images/memenu.js"></script>
 <script src="images/footer.js"></script>
 {literal}<script>$(document).ready(function(){$(".memenu").memenu();});</script>{/literal}
+<script src="images/fdkf.js"></script>
 </head>
 <body>
+  <!-- 左侧浮动客服 strat -->
+  <div class="yb_conct">
+    <div class="yb_bar">
+      <ul>
+        <li class="yb_top">返回顶部</li>
+        <li class="yb_phone">4008-123-456</li>
+        <li class="yb_QQ">
+          <a href="http://wpa.qq.com/msgrd?v=3&uin={$qq}&site=qq&menu=yes" target="_blank" title="即刻发送您的需求">在线咨询</a>
+        </li>
+        <li class="yb_ercode" style="height:53px;">扫描二维码 <br>
+          <img class="hd_qr" src="images/weixin.jpg" width="125" alt="关注你附近"> </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 左侧浮动客服 strat -->
 <div id="wrapper"> {include file="inc/header.tpl"}
 
  <div class="wrap mb" style="margin:0 auto;  height:auto; overflow:hidden;padding-top:30px;">

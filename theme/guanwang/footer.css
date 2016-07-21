@@ -19,5 +19,54 @@ img{ border:none;}
 .footer .bottom{ width:85%; margin:0 auto; text-align:center; padding-bottom:50px;}
 .footer .bottom hr{color:cccccc; size:1px; margin-bottom:40px;}
 .footer .bottom p{ font-family:宋体; font-size:13px; line-height:20px; color:#929292;}
+.line{
+	float: left;
+	width: 65%;
+}
+/*.img_box{
+	margin: 0 auto;
+}*/
+.img_box .hztb{
+	float: left;
+	width: 16%;
+	padding: 0 15px;
+}
+.img_box .hztb img{
+	width: 130px;
+}
+.contact{
+	float: left;
+	width: 35%;
+	padding: 40px 0;
+}
+.contact .erm_img{
+	float: left;
+	width: 35%;
+}
+.contact .erm_img img{
+	width: 100%;
+}
+.contact .lxfs {
+	float: left;
+	width: 65%;
+	font-size: 22px;
+	padding: 0 5%;
+	font-family: '微软雅黑';
+	color: #999999;
+}
+.contact .lxfs p{
+	line-height: 38px;
+}
 
+.contact .lxfs .lxwm{
+	display: block;
+	color: #fff;
+    background: #fd920e;
+    border-color: #fd920e;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+}
  
