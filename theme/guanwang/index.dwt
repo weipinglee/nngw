@@ -212,78 +212,20 @@ win.height = win.Document.body.scrollHeight;
 				</div>
 			 </div>
 			 <div class="col-md-6 feature-grid">
-				<div class="new_head"><h4 class="icon_4">工程案例</h4><span>更多>></span></div>
+				<div class="new_head"><h4 class="icon_4">{$recommend_article.project.name}</h4><span><a href="{$recommend_article.project.url}">更多>></a></span></div>
 				<div class="news_con">
-					<div class="moblie">							
-						<!-- <div class="code">
-							<img src="images/APP_05.png"/>
-						</div>
-						<div class="APP">
-							<img src="images/APP_07.png"/>
-						</div> -->
+					<div class="moblie">
 						 <!-- Swiper -->
     <div class="swiper-container swiper-container-horizontal swiper-container-free-mode">
         <div class="swiper-wrapper">
+          {foreach from=$recommend_article.project.article name=project_article key=pkey item=pitem}
             <div class="swiper-slide">
             	<div class="title_img">
-            		<img src="images/si.jpg"/>
-            		<p>花式台灯</p>
+            		<a href="{$pitem.url}" target="_blank"><img src="{$pitem.image}"/></a>
+            		<p><a href="{$pitem.url}" target="_blank">{$pitem.title}</a></p>
             	</div>          	
             </div>
-            <div class="swiper-slide">
-            	<div class="title_img">
-            		<img src="images/si2.jpg"/>
-            		<p>加拿大古堡</p>
-            	</div>
-            </div>
-            <div class="swiper-slide">
-            	<div class="title_img">
-            		<img src="images/si3.jpg"/>
-            		<p>花式台灯</p>
-            	</div>
-            </div>
-            <div class="swiper-slide">
-            	<div class="title_img">
-            		<img src="images/si.jpg"/>
-            		<p>花式台灯</p>
-            	</div>
-            </div>
-            <div class="swiper-slide">
-            	<div class="title_img">
-            		<img src="images/si2.jpg"/>
-            		<p>花式台灯</p>
-            	</div>
-            </div>
-            <div class="swiper-slide">
-            	<div class="title_img">
-            		<img src="images/si3.jpg"/>
-            		<p>花式台灯</p>
-            	</div>
-            </div>
-            <div class="swiper-slide">
-            	<div class="title_img">
-            		<img src="images/si.jpg"/>
-            		<p>花式台灯</p>
-            	</div>
-            </div>
-            <div class="swiper-slide">
-            	<div class="title_img">
-            		<img src="images/si2.jpg"/>
-            		<p>花式台灯</p>
-            	</div>
-            </div>
-            <div class="swiper-slide">
-            	<div class="title_img">
-            		<img src="images/si3.jpg"/>
-            		<p>花式台灯</p>
-            	</div>
-            </div>
-            <div class="swiper-slide">
-            	<div class="title_img">
-            		<img src="images/si.jpg"/>
-            		<p>花式台灯</p>
-            	</div>
-            </div>
+            {/foreach}
         </div>
         <!-- Add Pagination -->
         

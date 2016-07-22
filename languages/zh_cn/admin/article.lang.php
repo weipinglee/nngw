@@ -48,7 +48,7 @@ $_LANG['article_edit_succes'] = '编辑文章成功';
 $_LANG['article_select_empty'] = '没有选择任何文章';
 $_LANG['suolue'] = '缩略图';
 //工程案例
-$_LANG['article_project']='工程案例';
+/*$_LANG['article_project']='工程案例';
 $_LANG['article_project_add']='案例添加';
 $_LANG['article_project_edit']='编辑案例';
 $_LANG['article_project_del']='删除案例';
@@ -59,5 +59,5 @@ $_LANG['article_project_add_success']='添加案例成功';
 $_LANG['article_project_edit_success']='编辑案例成功';
 $_LANG['article_select_empty']='没有选择任何案例';
 $_LANG['article_project_status']='案例状态';
-$_LANG['article_project_thumb']='案例缩略图';
+$_LANG['article_project_thumb']='案例缩略图';*/
 ?>
