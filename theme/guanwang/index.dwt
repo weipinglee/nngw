@@ -171,8 +171,8 @@ win.height = win.Document.body.scrollHeight;
 		 </div>
 		 <div class="items-sec btm-sec">
 			 <div class="col-md-6 feature-grid">
-				<div class="new_head"><h4 class="icon_3">{$recommend_article.video.name}
-</h4><span><a href="{$recommend_article.video.url}">
+				<div class="new_head"><h4 class="icon_3">{$recommend_article.shipin.name}
+</h4><span><a href="{$recommend_article.shipin.url}">
 						更多>>
 					</a></span></div>
 				<div class="news_con">
@@ -204,7 +204,8 @@ win.height = win.Document.body.scrollHeight;
 						</div>
 
 						<div class="video_r">
-						<!-- {foreach from=$recommend_article.video.article name=video_article key=artkey item=article} -->
+						<!-- {foreach from=$recommend_article.shipin.article name=shipin_article key=artkey item=article} -->
+					    {if $smarty.foreach.shipin_article.index eq 3}{php}break;{/php}{/if}
 						<a href="{$article.url}" target="_blank"><img src="{$article.image}"></a>
 						<!-- {/foreach} -->
 						</div>
