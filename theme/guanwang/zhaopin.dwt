@@ -43,10 +43,14 @@ body {behavior: url("csshover.htc");}
       <img src="images/peo_1.png"  alt="">
     </div> -->
   </div>
+<div class="wrap mb" style="margin:0 auto;  height:auto; overflow:hidden;padding-top:30px;">
+  <div id="pageLeft"> {include file="inc/page_tree.tpl"} </div>
+<!-- 人才招聘 strat-->
+<div id="page" style="float:right; width:65%; height:auto; overflow:hidden;margin-bottom:40px; margin-top:20px;padding-left:10px;">
 <div class="jianjie_main" style="min-height:200px;">
   <ul class="title">
-    <li><span class="zhaopin_hr">招聘职位</span></li>
-    <li class="work_d">  
+    <li class="t_width1"><span class="zhaopin_hr">招聘职位</span></li>
+    <li class="t_width2 work_d">  
       <span>工作地点</span><i class="icon-angle-down icon_size"></i>
     
       <ul class="workplace">
@@ -57,8 +61,8 @@ body {behavior: url("csshover.htc");}
       </ul>
 
     </li>
-    <li><span>薪资水平</span></li>
-    <li><span>发布时间</span></li>
+    <li class="t_width3"><span>薪资水平</span></li>
+    <li class="t_width4"><span>发布时间</span></li>
     <!--  -->
   </ul>
 
@@ -68,11 +72,11 @@ body {behavior: url("csshover.htc");}
   <div class="toggles" id="toggle">
     <ul class="pro">
       <!-- <li style="width:5%;"><i class="icon-angle-down icon_size"></i></li> -->
-      <li><i class="icon-angle-down icon_size an_dj" ></i><span class="arrow" id="arrow">{$zhaopin.job}</span></li>
-      <li>{$zhaopin.cat_name}</li>
-      <li>{$zhaopin.salary}</li>
-      <li>{$zhaopin.add_time}</li>
-      <li class="button"><a class="td_bg" href="{$zhaopin.url}"><img src="images/upload_files.png"></a></li>
+      <li class="width1"><i class="icon-angle-down icon_size an_dj" ></i><span class="arrow" id="arrow">{$zhaopin.job}</span></li>
+      <li class="width2">{$zhaopin.cat_name}</li>
+      <li class="width3">{$zhaopin.salary}</li>
+      <li class="width4">{$zhaopin.add_time}</li>
+      <li class="width5 button"><a class="td_bg" href="{$zhaopin.url}"><img src="images/upload_files.png"></a></li>
     </ul>
      <div class="cont_txt" style="display:none">
     <div class="zhaopin_content">
@@ -98,14 +102,17 @@ body {behavior: url("csshover.htc");}
   
 </div>
 
-
-</div>
-  <div style="    margin: 10px 0;
+<div style="    margin: 10px 0;
     text-align: center;">
 
 {include file="inc/pager.tpl"}
 
   </div>
+</div>
+</div>
+<!-- 招聘人才 end -->
+</div>
+
 <div style="clear:both;"></div>
 {include file="inc/footer.tpl"}
 

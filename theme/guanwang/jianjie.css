@@ -15,7 +15,7 @@ a:focus, input[type=button] ,input[type=submit] {
 }
 .clear{clear: both;}
 
-.jianjie_main{ margin:0 auto;max-width: 1190px; height:auto; overflow:hidden;padding-top:30px;}
+.jianjie_main{ margin:0 auto;/*max-width: 1190px;*/ height:auto; overflow:hidden;padding-top:30px;}
 .jianjie_main .main_left{ float:left; width:30%; height:auto; overflow:hidden;}
 .jianjie_main .main_left .shizhong{width:20px; height:20px; float:left;}
 .jianjie_main .main_left h2{ color:#2c2c2c; font-size:16px;line-height: 20px;}
@@ -36,7 +36,22 @@ a:focus, input[type=button] ,input[type=submit] {
 
 .jianjie_main .upload{height:31px;}
 .jianjie_main .title{border-bottom: 1px solid #666;height: 35px;padding-bottom: 4px;}
-.jianjie_main .title li{float: left;height: 31px;line-height:31px; width: 20%;text-align: center;}
+.jianjie_main .title li{
+    float: left;
+    height: 31px;
+    line-height:31px; 
+    width: 20%;
+    text-align: center;
+}
+.jianjie_main .title li.t_width1{
+    width: 30%;
+}
+.jianjie_main .title li.t_width2,.jianjie_main .title li.t_width3{
+    width: 15%;
+}
+.jianjie_main .title li.t_width4{
+    width: 20%;
+}
 .jianjie_main .title li .zhaopin_hr{padding-left: 35px;background: url(../images/hr_icon_03.png) no-repeat;display: block;text-align: left;}
 .work_d:hover .workplace{
 	display: block;
@@ -46,8 +61,8 @@ a:focus, input[type=button] ,input[type=submit] {
     display: none;
     background: #fff;
     position: relative;
-    /*z-index: 10;*/
-    width: 50%;
+    z-index: 10;
+    width: 70%;
     margin: 0 auto;
     padding: 5px 0px;
     border:1px solid #d8d8d8;
@@ -57,9 +72,10 @@ a:focus, input[type=button] ,input[type=submit] {
    /* filter: progid:DXImageTransform.Microsoft.Shadow(color='#888888', Direction=500, Strength=3);*//*for ie6,7,8*/
 
 }
+
 .jianjie_main .title li ul li{
 	float: none;
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 	text-align: center;
 	padding: 4px 10px;
@@ -126,13 +142,32 @@ left: 35%;
 	text-align: right !important;
 	padding-right: 10px;
 }
-#toggle .pro li{float: left;height: 35px;line-height:35px; width:20%;text-align: center;    font-family: '微软雅黑';
-    font-size: 17px;}
+#toggle .pro li{
+    float: left;
+    height: 35px;
+    line-height:35px; 
+    text-align: center;  
+    font-family: '微软雅黑';
+    font-size: 17px;
+    position: relative;
+}
+#toggle .pro li.width1{
+    width: 30%;
+    text-align: left;
+    padding-left:30px; 
+}
+#toggle .pro li.width2,#toggle .pro li.width3{
+    width: 15%;
+}
+#toggle .pro li.width4,#toggle .pro li.width5{
+    width: 20%;
+}
+
 
 #toggle .pro .an_dj{
-	position: relative;
-    right: 35px;
-    line-height: 30px;
+	position: absolute;
+    left: 5px;
+    line-height: 35px;
 }
 #toggle .pro .td_bg{
     border:0;
