@@ -64,10 +64,10 @@ while($arr=$dou->fetch_assoc($query)){
 }
 //获得首页视频数据
 $sql="select * from".$dou->table('article').' as a left join'.$dou->table('article_category'). ' as c on a.cat_id=c.cat_id where c.unique_id = \'shipin\' order by id desc limit 1';
-//echo $sql;
 $query=$dou->query($sql);
 $video=$dou->fetch_assoc($query);
-//var_dump($vedio);
+//var_dump($video);
+
 // 赋值给模板-数据
 $smarty->assign('video',$video);
 $smarty->assign('frdlink',$frdlink);
@@ -91,6 +91,13 @@ foreach($cate as $key => $val){
 // print_r($dou->get_list('article', 'ALL', $_DISPLAY['home_article'], 'sort DESC'));exit;
 // print_r( $cate );exit();
 //var_dump($cate);die;
+if(isset($cate['shipin'])){
+    foreach($cate['shipin']['article'] as $k=>$v){
+        if($v['id']==$video['id']){
+            unset($cate['shipin']['article'][$k]);
+        }
+    }
+}
 $smarty->assign('recommend_article', $cate);
 /*echo "<pre>";
 print_r($cate);
