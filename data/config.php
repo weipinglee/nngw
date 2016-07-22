@@ -22,7 +22,7 @@ $dbname   = "nngw";
 $dbuser   = "root";
 
 // database password
-$dbpass   = "127890";
+$dbpass   = "";
 
 // table prefix
 $prefix   = "dou_";

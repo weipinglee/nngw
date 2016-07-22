@@ -12,9 +12,13 @@ img{ border:none;}
 	height: 100%;
 	background-color: #f5f5f5;
 }
+.footer_cont{
+	max-width: 1190px;
+	margin:0 auto;
+}
 .footer hr{ color:cccccc; size:1px;width:100%;}
 
-.footer .line{ margin:0 auto; height:auto; overflow:hidden;text-align:center; padding:40px;}
+.footer .line{ margin:0 auto; height:auto; overflow:hidden;text-align:center; padding:40px 0;}
 .footer .line .hezuo_img{ margin-bottom:30px;}
 .footer .bottom{ width:85%; margin:0 auto; text-align:center; padding-bottom:50px;}
 .footer .bottom hr{color:cccccc; size:1px; margin-bottom:40px;}
