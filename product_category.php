@@ -86,6 +86,20 @@ $smarty->assign('product_list', $product_list);
 $smarty->assign('product', $product);
 $smarty->assign('controller','product');
 
+//获取友情链接
+$sql='SELECT * FROM'.$dou->table('frdlink').' where status=1 order by id desc';
+$query=$dou->query($sql);
+$frdlink=array();
+while($arr=$dou->fetch_assoc($query)){
+
+    $frdlink[]=[
+        'id'=>$arr['id'],
+        'img'=>$arr['img'],
+        'url'=>$arr['url'],
+        'name'=>$arr['name']
+    ];
+}
+$smarty->assign('frdlink',$frdlink);
 //分类id
 $smarty->assign('req_id', $_REQUEST['id']);
 

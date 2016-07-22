@@ -16,13 +16,13 @@
 $dbhost   = "localhost";
 
 // database name
-$dbname   = "nngw";
+$dbname   = "guanwang";
 
 // database username
 $dbuser   = "root";
 
 // database password
-$dbpass   = "";
+$dbpass   = "127890";
 
 // table prefix
 $prefix   = "dou_";

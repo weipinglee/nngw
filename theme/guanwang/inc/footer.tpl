@@ -1,5 +1,6 @@
 
-<div class="footer_cont">
+<div class="footer">
+
 	<div class="line">
    <!--  <img class="hezuo_img" src="images/hezuo.jpg" width="97" height="22" alt="合作企业"> -->
 
