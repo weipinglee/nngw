@@ -68,10 +68,10 @@ catch (e) {
     $(function () {
       $("#slider").responsiveSlides({
       	auto: true,
-      	nav: true,
+      	nav: false,
       	speed: 500,
         namespace: "callbacks",
-        pager: false,
+        pager: true,
       });
     });
   </script>
@@ -155,7 +155,7 @@ catch (e) {
 	     	<!-- {foreach from=$show_list name=show item=show} -->
 	         <li>
 				<div class="banner1" >
-					<img src="{$show.show_img}" width="100%" style='max-height:640px;'/>
+					<img src="{$show.show_img}" width="100%" style='height:640px;'/>
 				</div>
 				 <!-- <div class="word">
 					<img src="../images/word.png" style="width:100%;height:100%;"/>
