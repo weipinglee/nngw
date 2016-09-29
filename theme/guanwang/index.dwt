@@ -140,36 +140,23 @@ win.height = win.Document.body.scrollHeight;
 </style>
 {/literal}
 <div class="col-md-3 feature-grid">
-				<div class="new_head"><h4 class="icon_2">公司动态</h4>
+				<div class="new_head"><h4 class="icon_2">{$recommend_article.dongtai.name}</h4>
 				</div>
 				
 				<div class="news_con">
 					<ul class="cominfor_ul">
+					<!-- {foreach from=$recommend_article.dogntai.article name=news_article key=artkey item=article} -->
 						<li>
 							<div class="cominfor_img">
 								<img src="{$recommend_article.hangqing.article.0.image}"/>
 							</div>
-							<p><a href="{$article.url}">新密久隆耐火材料有限公司：质量第一，诚信为本</a></p>
+							<p><a href="{$article.url}">{$article.title}</a></p>
 							<span class="time">{$article.add_time_short}</span>
 						</li>
-						<li>
-							<div class="cominfor_img">
-								<img src="{$recommend_article.hangqing.article.0.image}"/>
-							</div>
-							<p><a href="{$article.url}">新密久隆耐火材料有限公司：质量第一，诚信为本</a></p>
-							<span class="time">{$article.add_time_short}</span>
-						</li>
-
-						<li>
-							<div class="cominfor_img">
-								<img src="{$recommend_article.hangqing.article.0.image}"/>
-							</div>
-							<p><a href="{$article.url}">新密久隆耐火材料有限公司：质量第一，诚信为本</a></p>
-							<span class="time">{$article.add_time_short}</span>
-						</li>
+						<!-- {/foreach} -->
 					</ul>
 					<span class="genduo_a">
-						<a href="{$recommend_article.news.url}">
+						<a href="{$recommend_article.dongtai.url}">
 							更多 >>
 						</a>
 					</span>
@@ -185,29 +172,20 @@ win.height = win.Document.body.scrollHeight;
 				
 				<div class="news_con">
 					<ul class="infor_ul">
+					<!-- {foreach from=$recommend_article.hangqing.article name=news_article key=artkey item=article} -->
+					<!--{if $artkey gt 2}-->
+						<!--{else}-->
 						<li class="clearfix">
 							<img src="{$recommend_article.hangqing.article.0.image}"/>
-							<p><a href="{$article.url}">新密久隆耐火材料有限公司：质量第一，诚信为本</a></p>
+							<p><a href="{$article.url}">{$article.title}</a></p>
 							<span class="time">{$article.add_time_short}</span>
 						</li>
-						<li class="clearfix">
-							<div class="cominfor_img">
-								<img src="{$recommend_article.hangqing.article.0.image}"/>
-							</div>
-							<p><a href="{$article.url}">新密久隆耐火材料有限公司：质量第一，诚信为本</a></p>
-							<span class="time">{$article.add_time_short}</span>
-						</li>
-						<li class="clearfix">
-							<div class="cominfor_img">
-								<img src="{$recommend_article.hangqing.article.0.image}"/>
-							</div>
-							<p><a href="{$article.url}">新密久隆耐火材料有限公司：质量第一，诚信为本</a></p>
-							<span class="time">{$article.add_time_short}</span>
-						</li>
+						<!--{/if}-->
+						<!-- {/foreach} -->
 						
 					</ul>
 					<span class="genduo_a">
-						<a href="{$recommend_article.news.url}">
+						<a href="{$recommend_article.hangqing.url}">
 							更多 >>
 						</a>
 					</span>
