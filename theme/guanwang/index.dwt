@@ -148,7 +148,7 @@ win.height = win.Document.body.scrollHeight;
 					<!-- {foreach from=$recommend_article.dogntai.article name=news_article key=artkey item=article} -->
 						<li>
 							<div class="cominfor_img">
-								<img src="{$recommend_article.hangqing.article.0.image}"/>
+								<img src="{$article.image}"/>
 							</div>
 							<p><a href="{$article.url}">{$article.title}</a></p>
 							<span class="time">{$article.add_time_short}</span>
@@ -176,7 +176,7 @@ win.height = win.Document.body.scrollHeight;
 					<!--{if $artkey gt 2}-->
 						<!--{else}-->
 						<li class="clearfix">
-							<img src="{$recommend_article.hangqing.article.0.image}"/>
+							<img src="{$article.image}"/>
 							<p><a href="{$article.url}">{$article.title}</a></p>
 							<span class="time">{$article.add_time_short}</span>
 						</li>
