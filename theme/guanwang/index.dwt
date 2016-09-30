@@ -253,6 +253,9 @@ win.height = win.Document.body.scrollHeight;
 		 </div>
 	 </div>
 </div>
+<script type="text/javascript">
+	$('video').css('width',520).css('height',400);
+</script>
 
 
 
