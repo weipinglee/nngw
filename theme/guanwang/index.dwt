@@ -145,7 +145,7 @@ win.height = win.Document.body.scrollHeight;
 				
 				<div class="news_con">
 					<ul class="cominfor_ul">
-					<!-- {foreach from=$recommend_article.dogntai.article name=news_article key=artkey item=article} -->
+					<!-- {foreach from=$recommend_article.dongtai.article name=news_article key=artkey item=article} -->
 						<li>
 							<div class="cominfor_img">
 								<img src="{$article.image}"/>
@@ -254,7 +254,7 @@ win.height = win.Document.body.scrollHeight;
 	 </div>
 </div>
 <script type="text/javascript">
-	$('video').css('width',520).css('height',400);
+	$('video').css('width',520).css('height',400).attr('autoplay','autoplay').removeAttr('preload');
 </script>
 
 
