@@ -25,36 +25,35 @@ img{ border:none;}
 .footer .bottom p{ font-family:宋体; font-size:13px; line-height:20px; color:#929292;}
 .line{
 	float: left;
-	width: 65%;
+	width: 45%;
 }
 /*.img_box{
 	margin: 0 auto;
 }*/
 .img_box .hztb{
 	float: left;
-	width: 16%;
-	padding: 0 15px;
+	width: 130px;
+	padding: 10px;
 }
 .img_box .hztb img{
 	width: 130px;
 }
 .contact{
 	float: left;
-	width: 35%;
+	width: 50%;
 	padding: 40px 0;
 }
 .contact .erm_img{
 	float: left;
-	width: 35%;
+	width: 60%;
 }
 .contact .erm_img img{
 	width: 100%;
 }
 .contact .lxfs {
-	float: left;
-	width: 65%;
-	font-size: 22px;
-	padding: 0 5%;
+	float: right;
+	width: 30%;
+	font-size: 18px;
 	font-family: '微软雅黑';
 	color: #999999;
 }

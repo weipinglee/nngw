@@ -12,7 +12,6 @@
 		</div>
     </div>
     <div class="contact">
-    	<div class="erm_img"><img src="images/{$site.weixin}"></div>
     	<div class="lxfs">
     		<p>联系电话</p>
 			<p>{$site.tel}</p>
@@ -22,6 +21,7 @@
 			{/foreach}
 			<p><a class="lxwm">联系我们</a></p>
     	</div>
+    	<div class="erm_img"><img src="images/{$site.weixin}"></div>
     </div>
 
     <div class="bottom">
