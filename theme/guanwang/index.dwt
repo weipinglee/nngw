@@ -173,14 +173,13 @@ win.height = win.Document.body.scrollHeight;
 				<div class="news_con">
 					<ul class="infor_ul">
 					<!-- {foreach from=$recommend_article.hangqing.article name=news_article key=artkey item=article} -->
-					<!--{if $artkey gt 2}-->
-						<!--{else}-->
+					
 						<li class="clearfix">
 							<img src="{$article.image}"/>
 							<p><a href="{$article.url}">{$article.title}</a></p>
 							<span class="time">{$article.add_time_short}</span>
 						</li>
-						<!--{/if}-->
+						
 						<!-- {/foreach} -->
 						
 					</ul>

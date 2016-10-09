@@ -85,7 +85,7 @@ while( $tmp = $dou->fetch_assoc($query)){
 foreach($cate as $key => $val){
     $cate[$val['unique_id']]['name'] = $val['cat_name'];
     $cate[$val['unique_id']]['url'] = $val['url'];
-    $cate[$val['unique_id']]['article'] = $dou->get_list('article', $val['cat_id'], $_DISPLAY['home_article'], 'sort DESC'); 
+    $cate[$val['unique_id']]['article'] = $dou->get_list('article', $val['cat_id'], $_DISPLAY['home_article'], 'id DESC'); 
     unset($cate[$key]);
 }
 // print_r($dou->get_list('article', 'ALL', $_DISPLAY['home_article'], 'sort DESC'));exit;
