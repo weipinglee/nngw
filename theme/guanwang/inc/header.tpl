@@ -155,7 +155,7 @@ catch (e) {
 	     	<!-- {foreach from=$show_list name=show item=show} -->
 	         <li>
 				<div class="banner1" >
-					<img src="{$show.show_img}" width="100%" style='height:640px;'/>
+					<a href="{$show.show_link}"><img src="{$show.show_img}" width="100%" style='height:640px;'/></a>
 				</div>
 				 <!-- <div class="word">
 					<img src="../images/word.png" style="width:100%;height:100%;"/>
