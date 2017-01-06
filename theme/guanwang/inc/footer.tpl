@@ -29,8 +29,7 @@
 	<hr>
 	<p>Copyright&copy;2000-2015&nbsp;{$site.site_name} 版权所有&nbsp;&nbsp;&nbsp;{$site.icp}</p>
 	<p>服务电话：{$site.tel}&nbsp;地址：{$site.site_address}</p>
-
-	</p>
+	<p><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261115614'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261115614%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></p>
     </div>  
 </div>
 
